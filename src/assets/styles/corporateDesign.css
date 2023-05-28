@@ -1,0 +1,41 @@
+/* COLOR PALETTE */
+.primary-color {
+    color: #07C7F2;
+}
+
+.secondary-color {
+    color: #07DBF2;
+}
+
+.tetriary-color {
+    color: #0CF2DB;
+}
+
+.dark-color {
+    color: #253540;
+}
+
+.bright-color {
+    color: #F2F2F2;
+}
+
+/* BACKGROUNDS */
+.bg-primary-color {
+    background-color: #07C7F2;
+}
+
+.bg-secondary-color {
+    background-color: #07DBF2;
+}
+
+.bg-tetriary-color {
+    background-color: #0CF2DB;
+}
+
+.bg-dark-color {
+    background-color: #253540;
+}
+
+.bg-bright-color {
+    background-color: #F2F2F2;
+}
