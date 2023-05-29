@@ -1,6 +1,16 @@
-/* COLOR PALETTE */
+/* CUSTOM COLORS */
+
+:root {
+    --primary: #07C7F2;
+    --secondary: #07DBF2;
+    --tetriary: #0CF2DB;
+    --dark: #253540;
+    --bright: #F2F2F2;
+  }
+  
+  /* COLOR PALETTE */
 .primary-color {
-    color: #07C7F2;
+    color: var(--primary);
 }
 
 .secondary-color {
@@ -39,3 +49,5 @@
 .bg-bright-color {
     background-color: #F2F2F2;
 }
+
+

@@ -9,7 +9,7 @@ import "./assets/styles/corporateDesign.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <body className='bg-dark-color'>
+    <body className='bg-dark-color h-screen'>
     <header>
     <Header />
     </header>

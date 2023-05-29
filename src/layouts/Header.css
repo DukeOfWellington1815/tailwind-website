@@ -4,16 +4,12 @@
 
     display: flex;
     max-height:  40px !important; 
-}
-
-.pink {
-    background-color: pink ;
-    color: pink ;
+    border-radius: 50%;
 }
 
 .link-underline {
     border-bottom-width: 0;
-    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-image: linear-gradient(transparent, transparent), linear-gradient( var(--bright), var(--bright));
     background-size: 0 3px;
     background-position: 0 100%;
     background-repeat: no-repeat;
@@ -21,7 +17,7 @@
 }
 
 .link-underline-black {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
+    background-image: linear-gradient(transparent, transparent), linear-gradient( var(--primary), var(--primary) );
 }
 
 .link-underline:hover {
