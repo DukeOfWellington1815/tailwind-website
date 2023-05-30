@@ -5,6 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import Header from "./layouts/Header"
 import "./assets/styles/corporateDesign.css";
+import Aare from "./components/Aare"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
     <header>
     <Header />
     </header>
-    <App />  
+    <App />
+    <Aare/>  
     </body>
   </React.StrictMode>
 
