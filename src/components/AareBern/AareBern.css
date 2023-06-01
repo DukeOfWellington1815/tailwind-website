@@ -1,0 +1,67 @@
+@import "../../assets/styles/corporateDesign.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.temperatur {
+    color: var(--dark) !important;
+    font-weight: bolder;
+    font-size: 70px !important;
+    margin-bottom: 10px;
+}
+.aare-box-temperatur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary);
+    border-color: var(--);
+    border-width: 6px;
+}
+
+.aare-box-wasser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    border-color: var(--primary);
+    border-width: 6px;
+}
+
+.wasser-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.aare-stadt {
+    font-size: 24px;
+    color: var(--bright);
+    font-weight: bold !important;
+}
+
+.aare-info-temperatur {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--dark);
+    
+}
+
+.aare-info-wasser {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--tetriary);
+    
+}
+
+
+.forecasttemp {
+    color: var(--dark) !important;
+    font-weight: bolder;
+    font-size: 30px !important;
+    margin-bottom: 10px;
+}
+
+.kanalbild {
+    max-width: 6rem;
+}
