@@ -7,6 +7,7 @@ import Header from "./layouts/Header"
 import "./assets/styles/corporateDesign.css";
 import Aare from "./components/Aare/Aare";
 import GameLib from './components/GameLib/GameLib';
+import AareBern from "./components/AareBern/AareBern";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,8 @@ root.render(
     <header>
     <Header />
     </header>
+
+    <AareBern/>
     <App />
     <Aare/>  
 

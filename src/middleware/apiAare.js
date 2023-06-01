@@ -21,3 +21,14 @@ export async function getTempByCity(city) {
     const data = await response.json()
     return data
 }
+
+export async function getTempInBern(city) {
+    const response = await fetch(`${URL}/current?city=bern`)
+
+    if (!response.ok) {
+        return Promise.reject(response)
+    }
+
+    const data = await response.json()
+    return data
+}
