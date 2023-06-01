@@ -1,35 +1,32 @@
-import { getAllGames, getTempByCity } from '../../middleware/apiGames';
+import { getAllGames, getGameById } from '../../middleware/apiGames';
 import { useEffect, useState } from "react"
 import './GameLib.css'
 
 export default function GameLib() {
 
-    const [game, setGame] = useState([]);
+    const [games, setGames] = useState([]);
     const [user, setUser] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     const loadGames = async () => {
-    //         try {
-    //             const data = await getAllGames();
-    //             const games = Object.values(data); // extract the relevant data from the response and store it in an array
-    //             setGame(games);
-    //         } catch (error) {
-    //             setError(error.message);
-    //         }
-    //     }
-    //     loadGames();
-    // }, [])
-    
+    useEffect(() => {
+        const loadGames = async () => {
+            try {
+                const data = await getAllGames();
+                const games = Object.values(data); // extract the relevant data from the response and store it in an array
+                setGames(games);
+            } catch (error) {
+                setError(error.message);
+            }
+        }
+        loadGames();
+    }, [])
+
     return (
         <div className="Aare">
             <h1>HALLO</h1>
-            <article>
-                                <h2>{game.name}</h2>
-                                <p>{game.name}</p>
-                            </article>
-            {/* <h1>Aare im Moment</h1>
+
+            <h1>Harry Bodder</h1>
             {
                 error ? <p className="error">{error}</p> : null
             }
@@ -39,22 +36,25 @@ export default function GameLib() {
             }
 
             {
-                temps.length === 0 ? <p className="error">No temps found</p> : null
+                games.length === 0 ? <p className="error">No characters found</p> : null
             }
 
-            {temps && <>
+            <div className='gameDiv grid gap-4 grid-cols-4 p-10'>
+            {games && <>
                 {
-                    temps.map((temp) => {
+                    games.map((game) => {
                         return (
-                            <article key={temp.city}>
-                                <h2>{temp.city}</h2>
-                                <p>{temp.aare}</p>
+                            <article key={game.id} className='container mx-auto bg-gray-200 rounded-xl shadow border p-8'>
+                                <h1>{game.name}</h1>
+                                <p>{game.house}</p>
+                                <img src={game.image} alt=""/>
                             </article>
                         )
                     })
                 }
 
-            </>} */}
+            </>}
+            </div>
         </div>
     )
 }

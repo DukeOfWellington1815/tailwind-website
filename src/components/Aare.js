@@ -37,19 +37,23 @@ export default function Aare() {
                 temps.length === 0 ? <p className="error">No temps found</p> : null
             }
 
+            <div className='gameDiv grid gap-4 grid-cols-4 p-10'>
             {temps && <>
                 {
                     temps.map((temp) => {
                         return (
-                            <article key={temp.city}>
-                                <h2>{temp.city}</h2>
-                                <p>{temp.aare}</p>
+                            <article key={temp.city} className='container mx-auto bg-gray-200 rounded-xl shadow border p-8'>
+                                <h1>{temp.city}</h1>
+                                <p>{temp.aare}&deg;</p>
+                                {/* <p>{temp.temperature_text}</p>
+                                <p>{temp.timestring}</p> */}
                             </article>
                         )
                     })
                 }
 
             </>}
+            </div>
         </div>
     )
 }
