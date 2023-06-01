@@ -1,4 +1,4 @@
-@import "../assets/styles/corporateDesign.css";
+@import "../../assets/styles/corporateDesign.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

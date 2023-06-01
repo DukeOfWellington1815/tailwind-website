@@ -12,7 +12,7 @@ export async function getAllTemps() {
 }
 
 export async function getTempByCity(city) {
-    const response = await fetch(`${URL}?city=${city}/current`)
+    const response = await fetch(`${URL}/current?city=${city}`)
 
     if (!response.ok) {
         return Promise.reject(response)

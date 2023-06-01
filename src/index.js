@@ -5,7 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import Header from "./layouts/Header"
 import "./assets/styles/corporateDesign.css";
-import Aare from "./components/Aare"
+import Aare from "./components/Aare/Aare";
 import GameLib from './components/GameLib/GameLib';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

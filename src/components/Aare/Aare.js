@@ -1,4 +1,4 @@
-import { getAllTemps, getTempByCity } from '../middleware/apiAare';
+import { getAllTemps, getTempByCity } from '../../middleware/apiAare';
 import { useEffect, useState } from "react"
 import './Aare.css'
 
@@ -15,6 +15,7 @@ export default function Aare() {
                 const data = await getAllTemps();
                 const temps = Object.values(data); // extract the relevant data from the response and store it in an array
                 setTemps(temps);
+                console.log(temps);
             } catch (error) {
                 setError(error.message);
             }
@@ -43,7 +44,7 @@ export default function Aare() {
                     temps.map((temp) => {
                         return (
                             <article key={temp.city} className='container mx-auto bg-gray-200 rounded-xl shadow border p-8'>
-                                <h1>{temp.city}</h1>
+                                <h1>{temp.name}</h1>
                                 <p>{temp.aare}&deg;</p>
                                 {/* <p>{temp.temperature_text}</p>
                                 <p>{temp.timestring}</p> */}
