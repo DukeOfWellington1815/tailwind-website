@@ -16,7 +16,6 @@ export default function Aare() {
         const loadTemps = async () => {
             try {
                 const data = await getTempInBern();
-                console.log(data);
                 setTemp(data);
             } catch (error) {
                 setError(error.message);
@@ -30,8 +29,6 @@ export default function Aare() {
         // Clean up the interval when the component is unmounted
         return () => clearInterval(intervalId);
     }, [])
-
-    console.log(temp);
 
     var kanalbild = ""
     var kanalstatus = ""
@@ -48,21 +45,22 @@ export default function Aare() {
     return !temp ? null : (
         <div className="Aare">
             {temp.aare && temp.aare.location && (
-                <div className='gameDiv grid gap-4 grid-cols-4 p-10'>
-                    <h1 className='aare-stadt'>{temp.aare.location}</h1>
-                    <article className='aare-box-temperatur container mx-auto bg-gray-200 rounded-xl shadow border p-8'>
+                <div className='gameDiv grid gap-4 grid-cols-1 sm:grid-cols-2 p-10'>
+                    <article className='aare-box-temperatur container mx-auto rounded-xl shadow p-8'>
                        <p className='aare-info temperatur'>{temp.aare.temperature}°</p>
 
  
                         <span className='aare-info-temperatur forecasttemp'>Z Wasser i ca. 2 Stung:</span>
                         <span className='aare-info forecasttemp'>{temp.aare.forecast2h}°</span>
                         <span className='aare-info-temperatur forecasttemp'>Parole: {temp.aare.temperature_text}</span>
+                        <a href='https://aare.guru/#bern' target='new'>Aare-Guru</a>
                     </article>
 
-                    <article className='aare-box-temperatur container mx-auto bg-gray-200 rounded-xl shadow border p-8'>
+                    <article className='aare-box-temperatur container mx-auto rounded-xl shadow p-8'>
                             <span className='aare-info temperatur'>{temp.aare.flow} m3/s</span>
                             <img className='kanalbild' src={kanalbild} alt={kanalstatus}/>
                         <p className='aare-info-temperatur forecasttemp'>Wassermängi: {temp.aare.flow_text}</p>
+                        <a href='https://www.hydrodaten.admin.ch/' target='new'>BAFU</a>
                     </article>
                 </div>
             )}

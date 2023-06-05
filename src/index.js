@@ -8,24 +8,27 @@ import "./assets/styles/corporateDesign.css";
 import Aare from "./components/Aare/Aare";
 import GameLib from './components/GameLib/GameLib';
 import AareBern from "./components/AareBern/AareBern";
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <body className='bg-dark-color h-screen'>
-    <header>
-    <Header />
-    </header>
+    <Router>
+      <body className=''>
+        <header>
+          <Header />
+        </header>
 
-    <AareBern/>
-    <App />
-    <Aare/>  
+        <AareBern />
+        <App />
+        {/* <Aare/>   */}
 
-    <GameLib/>
-    </body>
+        {/* <GameLib/> */}
+      </body>
+    </Router>
   </React.StrictMode>
-
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

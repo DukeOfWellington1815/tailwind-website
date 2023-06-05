@@ -1,14 +1,15 @@
-{/* <ul role="list" class="p-6 divide-y divide-slate-200">
-  {#each people as person}
-    <!-- Remove top/bottom padding when first/last child -->
-    <li class="flex py-4 first:pt-0 last:pb-0">
-      <img class="h-10 w-10 rounded-full" src="{person.imageUrl}" alt="" />
-      <div class="ml-3 overflow-hidden">
-        <p class="text-sm font-medium text-slate-900">{person.name}</p>
-        <p class="text-sm text-slate-500 truncate">{person.email}</p>
-      </div>
-    </li>
-  {/each}
-</ul> */}
+export default function Portfolio() {
+  return (
+    <div className="container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10">
+      <p className="text-3xl text-gray-700 font-bold mb-5">
+        Hello there
+      </p>
+      <p className="text-gray-500 text-lg">
+        Portfolio
+      </p>
 
-// INSTEAD OF MAPPING THE ARRAY OF PEOPLE TO A LIST OF HTML ELEMENTS
+
+      
+    </div>
+  );
+}
