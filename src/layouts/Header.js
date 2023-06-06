@@ -60,10 +60,15 @@ export default function Header() {
               </div>
             </Link>
           ))}
-          <div className=''>
-            <AiFillGithub/>
-            <AiFillLinkedin/>
+          <div className='flex justify-center items-end fixed bottom-0 left-0 right-0 mb-2 space-x-4'>
+            <a href='https://youtube.com' target='new' className='large-icon dark-color'>
+              <AiFillGithub />
+            </a>
+            <a href='https://youtube.com' target='new' className='large-icon dark-color'>
+              <AiFillLinkedin />
+            </a>
           </div>
+
         </div>
         <div className="hidden md:flex space-x-16">
           {[

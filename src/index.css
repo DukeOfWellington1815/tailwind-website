@@ -24,7 +24,7 @@ body::before {
   z-index: -1;
   background-image: linear-gradient(to bottom right, var(--primary), var(--tetriary));
   background-size: 400% 400%;
-  animation: gradient-animation 3s linear infinite;
+  animation: gradient-animation 4.5s linear infinite;
 }
 
 
