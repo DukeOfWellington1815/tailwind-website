@@ -3,6 +3,7 @@ import logo from '../assets/images/logo512.png';
 import './Header.css';
 import "../assets/styles/corporateDesign.css";
 import { Link } from 'react-router-dom';
+import { AiFillHome, AiFillFolderOpen, AiFillMail, AiFillCode, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,8 +27,16 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isOpen]);
+
   return (
-    <nav className="bg-bright-color shadow border-0 p-4 flex sm:justify-center h-16 min-h-full">
+    <nav className="bg-bright-color shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: "-20px 0px 15px -3px rgba(0,0,0,0.1)" }}>
       <div className="w-full h-full flex justify-center items-center relative">
         <img src={logo} className="App-logo monkeylogo absolute left-0 top-1/2 -translate-y-1/2" alt="logo" />
         <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
@@ -35,19 +44,26 @@ export default function Header() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
-        <div ref={menuRef} className={`fixed top-0 bottom-0 right-0 w-64 bg-secondary-color shadow-md rounded-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+        <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
           {[
-            ["Home", "/dashboard"],
-            ["Dossier", "/dossier"],
-            ["Projects", "/projects"],
-            ["Contact", "/contact"],
-          ].map(([title, url], index) => (
-            <Link key={index} to={url} className="font-display max-w-sm text-xl font-bold leading-tight block text-center">
-              <span className="text-dark">
-                {title}
-              </span>
+            ["Home", "/dashboard", <AiFillHome />],
+            ["Dossier", "/dossier", <AiFillFolderOpen />],
+            ["Projects", "/projects", <AiFillCode />],
+            ["Contact", "/contact", <AiFillMail />],
+          ].map(([title, url, icon], index) => (
+            <Link key={index} to={url} className="font-display max-w-sm text-xl font-bold dark-color leading-tight block text-center">
+              <div className='flex items-center'>
+                {icon}
+                <span className="ml-4 text-dark text-4xl link link-underline link-underline-black">
+                  {title}
+                </span>
+              </div>
             </Link>
           ))}
+          <div className=''>
+            <AiFillGithub/>
+            <AiFillLinkedin/>
+          </div>
         </div>
         <div className="hidden md:flex space-x-16">
           {[

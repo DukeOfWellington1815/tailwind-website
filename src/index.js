@@ -14,17 +14,17 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <body className=''>
-        <header>
+      <div className=''>
+        <header className=''>
           <Header />
         </header>
-
+        
         <AareBern />
-        <App />
+        {/* <App /> */}
         {/* <Aare/>   */}
 
         {/* <GameLib/> */}
-      </body>
+      </div>
     </Router>
   </React.StrictMode>
 );

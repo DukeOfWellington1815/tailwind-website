@@ -53,14 +53,14 @@ export default function Aare() {
                         <span className='aare-info-temperatur forecasttemp'>Z Wasser i ca. 2 Stung:</span>
                         <span className='aare-info forecasttemp'>{temp.aare.forecast2h}°</span>
                         <span className='aare-info-temperatur forecasttemp'>Parole: {temp.aare.temperature_text}</span>
-                        <a href='https://aare.guru/#bern' target='new'>Aare-Guru</a>
+                        <a className='aare-link' href='https://aare.guru/#bern' target='new'>Aare-Guru</a>
                     </article>
 
                     <article className='aare-box-temperatur container mx-auto rounded-xl shadow p-8'>
                             <span className='aare-info temperatur'>{temp.aare.flow} m3/s</span>
                             <img className='kanalbild' src={kanalbild} alt={kanalstatus}/>
                         <p className='aare-info-temperatur forecasttemp'>Wassermängi: {temp.aare.flow_text}</p>
-                        <a href='https://www.hydrodaten.admin.ch/' target='new'>BAFU</a>
+                        <a className='aare-link' href='https://www.hydrodaten.admin.ch/' target='new'>BAFU</a>
                     </article>
                 </div>
             )}

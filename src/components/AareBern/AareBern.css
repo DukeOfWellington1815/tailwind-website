@@ -14,9 +14,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--primary);
-    border-color: var(--dark);
-    border-width: 6px;
 }
 
 .aare-box-wasser {
@@ -36,7 +33,7 @@
 
 .aare-stadt {
     font-size: 24px;
-    color: var(--bright);
+    color: var(--dark);
     font-weight: bold !important;
 }
 
@@ -64,4 +61,10 @@
 
 .kanalbild {
     max-width: 6.8rem;
+    background-color: var(--secondary);
+    border-radius: 100%;
+}
+
+.aare-link {
+    color: var(--dark);
 }
