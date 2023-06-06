@@ -16,7 +16,7 @@ body {
 
 body::before {
   content: "";
-  position: absolute;
+  position: fixed; /* changed from absolute */
   top: 0;
   left: 0;
   width: 100%;
@@ -24,8 +24,9 @@ body::before {
   z-index: -1;
   background-image: linear-gradient(to bottom right, var(--primary), var(--tetriary));
   background-size: 400% 400%;
-  animation: gradient-animation 5s linear infinite;
+  animation: gradient-animation 3s linear infinite;
 }
+
 
 @keyframes gradient-animation {
     0% {background-position: top left;}
