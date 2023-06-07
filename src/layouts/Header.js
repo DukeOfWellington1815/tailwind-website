@@ -38,7 +38,11 @@ export default function Header() {
   return (
     <nav className="bg-bright-color shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: "-20px 0px 15px -3px rgba(0,0,0,0.1)" }}>
       <div className="w-full h-full flex justify-center items-center relative">
-        <img src={logo} className="App-logo monkeylogo absolute left-0 top-1/2 -translate-y-1/2" alt="logo" />
+        
+        <Link to="/">
+          <img src={logo} className="App-logo monkeylogo absolute left-0 top-0" alt="logo" />
+        </Link>
+        
         <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -46,7 +50,7 @@ export default function Header() {
         </button>
         <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
           {[
-            ["Home", "/dashboard", <AiFillHome />],
+            ["Home", "/", <AiFillHome />],
             ["Dossier", "/dossier", <AiFillFolderOpen />],
             ["Projects", "/projects", <AiFillCode />],
             ["Contact", "/contact", <AiFillMail />],
@@ -72,7 +76,7 @@ export default function Header() {
         </div>
         <div className="hidden md:flex space-x-16">
           {[
-            ["Home", "/dashboard"],
+            ["Home", "/"],
             ["Dossier", "/dossier"],
             ["Projects", "/projects"],
             ["Contact", "/contact"],

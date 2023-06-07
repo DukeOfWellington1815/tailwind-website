@@ -1,15 +1,42 @@
 @import "../assets/styles/corporateDesign.css";
 
-.monkeylogo{
+.monkeylogo {
+    animation: monkeyspin-reverse 1s;
+}
+
+.monkeylogo:hover {
+    animation: monkeyspin 1s;
+}
+
+@keyframes monkeyspin {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(1turn);
+    }
+}
+
+@keyframes monkeyspin-reverse {
+    0% {
+        transform: rotateZ(1turn);
+    }
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+
+.monkeylogo {
 
     display: flex;
-    max-height:  40px !important; 
+    max-height: 40px !important;
     border-radius: 50%;
 }
 
 .link-underline {
     border-bottom-width: 0;
-    background-image: linear-gradient(transparent, transparent), linear-gradient( var(--bright), var(--bright));
+    background-image: linear-gradient(transparent, transparent), linear-gradient(var(--bright), var(--bright));
     background-size: 0 3px;
     background-position: 0 100%;
     background-repeat: no-repeat;
@@ -17,19 +44,18 @@
 }
 
 .link-underline-black {
-    background-image: linear-gradient(transparent, transparent), linear-gradient( var(--primary), var(--primary) );
+    background-image: linear-gradient(transparent, transparent), linear-gradient(var(--primary), var(--primary));
 }
 
 .link-underline:hover {
     background-size: 100% 3px;
     background-position: 0 100%
 }
-  
+
 .no-scroll {
     overflow: hidden;
-  }
-  
-  .large-icon {
+}
+
+.large-icon {
     font-size: 50px;
-  }
-  
+}

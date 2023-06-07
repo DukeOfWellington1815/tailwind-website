@@ -9,23 +9,29 @@ import Aare from "./components/Aare/Aare";
 import GameLib from './components/GameLib/GameLib';
 import AareBern from "./components/AareBern/AareBern";
 import { BrowserRouter as Router } from 'react-router-dom';
+import Projects from "./pages/projects"
+import { Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <div className=''>
-        <header className=''>
-          <Header />
-        </header>
-        
-        <AareBern />
-        {/* <App /> */}
-        {/* <Aare/>   */}
+<Router>
+  <div className=''>
+    <header className=''>
+      <Header />
+    </header>
+    
+    <Routes>
+      <Route path="/projects" element={<Projects />} />
+    </Routes>
+    
+    <AareBern />
+    {/* <App /> */}
+    {/* <Aare/>   */}
 
-        {/* <GameLib/> */}
-      </div>
-    </Router>
+    {/* <GameLib/> */}
+  </div>
+</Router>
   </React.StrictMode>
 );
 
