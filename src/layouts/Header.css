@@ -4,9 +4,9 @@
     animation: monkeyspin-reverse 1s;
 }
 
-.monkeylogo:hover {
-    animation: monkeyspin 1s;
-}
+ .monkeylogo:hover {
+    animation: monkeyspin 1s ease-in 2s;
+} 
 
 @keyframes monkeyspin {
     0% {
