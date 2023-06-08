@@ -1,6 +1,7 @@
 import { getAllGames, getGameById } from '../../middleware/apiGames';
 import { useEffect, useState } from "react"
 import './GameLib.css'
+import GameForm from "../GameForm/GameForm"
 
 export default function GameLib() {
 
@@ -25,6 +26,8 @@ export default function GameLib() {
     return (
         <div className="Aare">
             <h1>HALLO</h1>
+
+            <GameForm/>
 
             <h1>Harry Bodder</h1>
             {
