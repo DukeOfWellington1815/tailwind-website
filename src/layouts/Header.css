@@ -1,12 +1,8 @@
 @import "../assets/styles/corporateDesign.css";
 
-.monkeylogo {
-    animation: monkeyspin-reverse 1s;
+.monkeylogo--spin {
+    animation: monkeyspin 1s forwards;
 }
-
- .monkeylogo:hover {
-    animation: monkeyspin 1s ease-in 2s;
-} 
 
 @keyframes monkeyspin {
     0% {
@@ -17,18 +13,7 @@
     }
 }
 
-@keyframes monkeyspin-reverse {
-    0% {
-        transform: rotateZ(1turn);
-    }
-    100% {
-        transform: rotateZ(0);
-    }
-}
-
-
 .monkeylogo {
-
     display: flex;
     max-height: 40px !important;
     border-radius: 50%;

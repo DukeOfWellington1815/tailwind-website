@@ -1,4 +1,5 @@
 @import "../../assets/styles/corporateDesign.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,11 +10,18 @@
     font-size: 70px !important;
     margin-bottom: 10px;
 }
+
 .aare-box-temperatur {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    transition: 0.3s;
+}
+
+.aare-box-temperatur:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .aare-box-wasser {
@@ -41,16 +49,13 @@
     font-size: 18px;
     margin-bottom: 5px;
     color: var(--dark);
-    
 }
 
 .aare-info-wasser {
     font-size: 18px;
     margin-bottom: 5px;
     color: var(--tetriary);
-    
 }
-
 
 .forecasttemp {
     color: var(--dark) !important;
@@ -66,4 +71,12 @@
 
 .aare-link {
     color: var(--dark);
+}
+
+@media (max-width: 768px) {
+    .temperatur,
+    .forecasttemp,
+    .aare-info-temperatur {
+        font-size: 14px !important;
+    }
 }

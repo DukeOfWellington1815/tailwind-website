@@ -9,6 +9,16 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef();
   const menuRef = useRef();
+  const logoRef = useRef();
+
+  useEffect(() => {
+    if (!logoRef.current) return;
+    logoRef.current.addEventListener("mouseover", () => {
+      logoRef.current.classList.remove("monkeylogo--spin")
+      void logoRef.current.offsetWidth;
+      logoRef.current.classList.add("monkeylogo--spin")
+    })
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -40,7 +50,7 @@ export default function Header() {
       <div className="w-full h-full flex justify-center items-center relative">
         
         <Link to="/">
-          <img src={logo} className="App-logo monkeylogo absolute left-0 top-0" alt="logo" />
+          <img src={logo} ref={logoRef} className="App-logo monkeylogo absolute left-0 top-0" alt="logo" />
         </Link>
         
         <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
