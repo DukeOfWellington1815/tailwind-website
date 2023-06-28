@@ -10,6 +10,7 @@ import GameLib from './components/GameLib/GameLib';
 import AareBern from "./components/AareBern/AareBern";
 import { BrowserRouter as Router } from 'react-router-dom';
 import Projects from "./pages/projects"
+import Dossier from "./pages/dossier"
 import { Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +24,7 @@ root.render(
     
     <Routes>
       <Route path="/projects" element={<Projects />} />
+      <Route path="/dossier" element={<Dossier />} />
     </Routes>
     
     <AareBern />
