@@ -9,8 +9,9 @@ import Aare from "./components/Aare/Aare";
 import GameLib from './components/GameLib/GameLib';
 import AareBern from "./components/AareBern/AareBern";
 import { BrowserRouter as Router } from 'react-router-dom';
-import Projects from "./pages/projects"
-import Dossier from "./pages/dossier"
+import ProjectsPage from "./pages/projects"
+import DossierPage from "./pages/dossier"
+import LoginPage from './pages/login';
 import { Route, Routes } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,11 +24,13 @@ root.render(
     </header>
     
     <Routes>
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/dossier" element={<Dossier />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/dossier" element={<DossierPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<AareBern />} />
     </Routes>
     
-    <AareBern />
+    {/* <AareBern /> */}
     {/* <App /> */}
     {/* <Aare/>   */}
 
