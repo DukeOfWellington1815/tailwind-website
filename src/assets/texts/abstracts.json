@@ -1,18 +1,15 @@
 [
   {
     "title": "Project A",
-    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/project-a-image.jpg"
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   {
     "title": "Project B",
-    "body": "Pellentesque in ipsum id orci porta dapibus.",
-    "image": "https://i1.sndcdn.com/artworks-yrpn1tbtHr6qiRxh-tnzkkQ-t500x500.jpg"
+    "body": "Pellentesque in ipsum id orci porta dapibus."
   },
   {
     "title": "Project C",
-    "body": "Vestibulum ac diam sit amet quam vehicula elementum.",
-    "image": "./images/logo192.png"
+    "body": "Vestibulum ac diam sit amet quam vehicula elementum."
   },
   {
     "title": "PRESIDENTS OF THE WORLD",

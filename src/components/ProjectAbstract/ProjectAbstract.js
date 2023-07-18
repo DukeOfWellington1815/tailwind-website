@@ -1,11 +1,33 @@
 import React from 'react';
 import abstractsData from '../../assets/texts/abstracts.json';
-import "./ProjectAbstract.css"
-import logo from './images/logo192.png';
-
+import "./ProjectAbstract.css";
+import logo from '../../assets/images/logo192.png';
+import kanal from '../../assets/images/kanal-offen.svg';
+// Import other images as needed
 
 const ProjectAbstract = () => {
-  const abstracts = abstractsData;
+  const abstracts = abstractsData.map((abstract, index) => {
+    let image;
+    switch (index) {
+      case 0:
+        image = logo;
+        break;
+      case 1:
+        image = kanal;
+        break;
+      case 2:
+        image = kanal;
+        break;
+      case 3:
+        image = kanal;
+        break;
+      // Assign images to other articles as needed
+      default:
+        image = logo;
+        break;
+    }
+    return { ...abstract, image };
+  });
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
