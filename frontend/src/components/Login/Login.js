@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// Login.js
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../middleware/apiLogin.js";
+import useSession from "../../middleware/session.js";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleLogin = (e) => {
+  // Initialize the useSession hook
+  const { login: sessionLogin } = useSession();
+
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Perform authentication logic here
-    if (username === 'admin' && password === 'password') {
-      // Successful login
-      setError('');
-      // Save user session or token here if needed
-      navigate('/'); // Redirect to home or protected route
-    } else {
-      setError('Invalid username or password');
+    try {
+      // Call the login function from the api file
+      const response = await login({username, password });
+
+      // Login successful, set user session using the useSession hook
+      sessionLogin(response);
+
+      setError("");
+      navigate("/"); // Redirect to home or protected route
+    } catch (error) {
+      // Invalid credentials or other login errors
+      setError("Invalid username or password");
     }
   };
-
-  useEffect(() => {
-    document.body.classList.add('no-scroll');
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, []);
 
   return (
     <div className="flex justify-center items-center h-screen">
