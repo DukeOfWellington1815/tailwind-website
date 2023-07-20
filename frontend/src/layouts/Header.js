@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import logo from '../assets/images/logo512.png';
-import './Header.css';
-import '../assets/styles/corporateDesign.css';
+import React, { useEffect, useRef, useState} from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet'; // Import Helmet from react-helmet
 import {
   AiFillHome,
   AiFillFolderOpen,
@@ -12,6 +10,9 @@ import {
   AiFillLinkedin,
   AiFillLock,
 } from 'react-icons/ai';
+import logo from '../assets/images/logo512.png';
+import './Header.css';
+import '../assets/styles/corporateDesign.css';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,6 +67,11 @@ export default function Header() {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    // Update the website title here using react-helmet
+    document.title = 'New Website Name'; // Replace 'New Website Name' with your desired website name
+  }, []); // This effect runs only once on component mount
+
   return (
     <nav className="bg-bright-color shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: '-20px 0px 15px -3px rgba(0,0,0,0.1)' }}>
       <div className="w-full h-full flex justify-center items-center relative">
@@ -80,13 +86,13 @@ export default function Header() {
           </svg>
         </button>
 
-        {screenWidth >= 768 && ( // Render login button for screen width 768px and above
+        {screenWidth >= 768 && (
           <Link to="/login" className="absolute top-1/2 right-4 transform -translate-y-1/2 font-display max-w-sm text-2xl font-bold leading-tight">
             <span className="link link-underline link-underline-black text-black">Login</span>
           </Link>
         )}
 
-        {screenWidth < 768 && ( // Render side navigation for screen width below 768px
+        {screenWidth < 768 && (
           <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
             {[
               ['Home', '/', <AiFillHome />],
