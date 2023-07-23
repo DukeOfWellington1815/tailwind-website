@@ -14,7 +14,10 @@ import ProjectsPage from './pages/projects';
 import DossierPage from './pages/dossier';
 import LoginPage from './pages/login';
 import { Route, Routes } from 'react-router-dom';
-import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'; // Import the AuthenticatedRoute component
+import withAuth from './withAuth'; // Import the withAuth HOC
+
+const ProtectedProjectsPage = withAuth(ProjectsPage); // Wrap the ProjectsPage component with the withAuth HOC
+const ProtectedDossierPage = withAuth(DossierPage); // Wrap the DossierPage component with the withAuth HOC
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,9 +29,9 @@ root.render(
         </header>
 
         <Routes>
-          {/* Use AuthenticatedRoute for routes that should be accessible only to logged-in users */}
-          <Route path="/projects" element={<AuthenticatedRoute element={<ProjectsPage />} />} />
-          <Route path="/dossier" element={<AuthenticatedRoute element={<DossierPage />} />} />
+          {/* Use the protected components for routes that should be accessible only to logged-in users */}
+          <Route path="/projects" element={<ProtectedProjectsPage />} />
+          <Route path="/dossier" element={<ProtectedDossierPage />} />
 
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<AareBern />} />

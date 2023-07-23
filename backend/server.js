@@ -1,8 +1,11 @@
+// server.js
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser'); // Import the cookie-parser library
 
 const app = express();
 const port = 5000;
@@ -19,10 +22,11 @@ const users = [
 ];
 
 app.use(bodyParser.json());
+app.use(cookieParser()); // Use cookie-parser middleware
 app.use(cors());
 
 function verifyToken(req, res, next) {
-  const token = req.header('Authorization');
+  const token = req.cookies.token; // Read token from cookie
 
   if (!token) {
     return res.status(401).json({ error: 'Access denied' });
@@ -47,10 +51,14 @@ app.post('/api/login', (req, res) => {
     // Successful login
 
     // Generate a JWT token
-    const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '48h' });
 
-    // Send the token in the response
-    res.status(200).json({ message: 'Login successful', token });
+    // Set the token in a cookie with the name "token", expires in 48 hours
+    res.cookie('token', token, { httpOnly: true, maxAge: 48 * 3600000 }); // 48 hours in milliseconds
+
+
+    // Send a success message
+    res.status(200).json({ message: 'Login successful', user: { username: user.username } });
   } else {
     // Invalid credentials
     res.status(401).json({ error: 'Invalid username or password' });

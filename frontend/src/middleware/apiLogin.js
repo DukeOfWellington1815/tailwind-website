@@ -1,4 +1,5 @@
-// apiLogin.js
+// middleware/apiLogin.js
+
 const URL = "http://localhost:5000"; // backend URL
 
 export async function login({ username, password }) {
@@ -11,12 +12,9 @@ export async function login({ username, password }) {
   });
 
   if (!response.ok) {
-    return Promise.reject(response);
+    throw new Error("Invalid username or password");
   }
 
-  const data = await response.json();  
-  console.log(data);
-  return data;
-
-
+  const data = await response.json();
+  return data; // Assuming the response only contains user data, without the token property
 }
