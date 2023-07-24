@@ -1,10 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AiFillHome, AiFillFolderOpen, AiFillMail, AiFillCode, AiFillGithub, AiFillLinkedin, AiFillLock, AiFillUnlock } from 'react-icons/ai';
+import {
+  AiFillHome,
+  AiFillFolderOpen,
+  AiFillMail,
+  AiFillCode,
+  AiFillGithub,
+  AiFillLinkedin,
+  AiFillLock,
+  AiFillUnlock,
+} from 'react-icons/ai';
 import logo from '../assets/images/logo512.png';
 import './Header.css';
 import '../assets/styles/corporateDesign.css';
-import useSession from '../middleware/session'; // Import the useSession hook from the correct location
+import useSession from '../middleware/session';
 import Cookies from 'js-cookie';
 
 export default function Header() {
@@ -16,8 +25,7 @@ export default function Header() {
   const menuRef = useRef();
   const logoRef = useRef();
 
-  // Use the useSession hook here
-  const { logout, user } = useSession(); // Destructure the user from the useSession hook
+  const { logout, user } = useSession();
 
   useEffect(() => {
     if (!logoRef.current) return;
@@ -66,7 +74,6 @@ export default function Header() {
   }, [isOpen]);
 
   useEffect(() => {
-    // Update the website title here using react-helmet
     document.title = 'New Website Name'; // Replace 'New Website Name' with your desired website name
   }, []); // This effect runs only once on component mount
 
@@ -97,9 +104,6 @@ export default function Header() {
                     Logout
                   </span>
                 </div>
-
-
-
               </button>
             ) : (
               <Link to="/login" className="link link-underline link-underline-black text-black font-display max-w-sm text-xl font-bold leading-tight">
@@ -109,7 +113,6 @@ export default function Header() {
                     Login
                   </span>
                 </div>
-
               </Link>
             )}
           </div>
@@ -148,7 +151,6 @@ export default function Header() {
           </div>
         )}
 
-
         <div className="hidden md:flex space-x-16">
           {[
             ['Home', '/'],
@@ -162,7 +164,32 @@ export default function Header() {
               </span>
             </Link>
           ))}
+          <div className="flex items-center space-x-4">
+            {sessionCookie && user ? (
+              <button
+                className="font-display max-w-sm text-2xl font-bold leading-tight"
+                onClick={() => logout()}
+              >
+                <div className="flex items-center link link-underline link-underline-black">
+                  <AiFillUnlock />
+                  <span className="ml-2 text-black">
+                    Logout
+                  </span>
+                </div>
+              </button>
+            ) : (
+              <Link to="/login" className="font-display max-w-sm text-2xl font-bold leading-tight">
+                <div className="flex items-center link link-underline link-underline-black">
+                  <AiFillLock />
+                  <span className="ml-2 text-black">
+                    Login
+                  </span>
+                </div>
+              </Link>
+            )}
+          </div>
         </div>
+
       </div>
     </nav>
   );
