@@ -9,6 +9,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  document.body.classList.add('no-scroll');
+
   // Initialize the useSession hook
   const { login: sessionLogin, error: sessionError } = useSession();
 
