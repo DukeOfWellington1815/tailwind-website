@@ -1,8 +1,5 @@
-// middleware/session.js
-
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import { Router } from "react-router-dom";
 
 const SESSION_COOKIE_KEY = "session";
 
@@ -29,7 +26,9 @@ export default function useSession() {
 
   const updateSession = (data) => {
     setSession(data);
-    Cookies.set(SESSION_COOKIE_KEY, JSON.stringify(data), { expires: 2 }); // Set the session data as a cookie, expires in 1 day
+    Cookies.set(SESSION_COOKIE_KEY, JSON.stringify(data), { expires: 2 });
+    window.location.reload(); // Refresh the page after updating the session
+    window.location.href = "/"; // Redirect to the home page
   };
 
   const login = (data) => {
@@ -37,9 +36,10 @@ export default function useSession() {
   };
 
   const logout = () => {
-    Cookies.remove(SESSION_COOKIE_KEY); // Deletes the cookie
-    setSession(defaultModel); // Resets the session state in the component
-  };  
+    Cookies.remove(SESSION_COOKIE_KEY);
+    setSession(defaultModel);
+    window.location.href = "/"; // Redirect to the home page
+  };
 
   return {
     ...session,

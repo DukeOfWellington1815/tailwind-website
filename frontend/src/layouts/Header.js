@@ -91,6 +91,26 @@ export default function Header() {
           </svg>
         </button>
 
+        {screenWidth >= 768 && (
+          <div className="desktop-logout absolute top-1/2 right-4 transform -translate-y-1/2 font-display max-w-sm text-2xl font-bold leading-tight link link-underline link-underline-black">
+            {sessionCookie && user ? (
+              <button className="text-black" onClick={() => logout()}>
+                <div className="flex items-center">
+                  <AiFillUnlock />
+                  <span className="ml-2">Logout</span>
+                </div>
+              </button>
+            ) : (
+              <Link to="/login" className="text-black">
+                <div className="flex items-center">
+                  <AiFillLock />
+                  <span className="ml-2">Login</span>
+                </div>
+              </Link>
+            )}
+          </div>
+        )}
+
         {screenWidth < 768 && (
           <div className="flex items-center space-x-4">
             {sessionCookie && user ? (
@@ -164,30 +184,6 @@ export default function Header() {
               </span>
             </Link>
           ))}
-          <div className="flex items-center space-x-4">
-            {sessionCookie && user ? (
-              <button
-                className="font-display max-w-sm text-2xl font-bold leading-tight"
-                onClick={() => logout()}
-              >
-                <div className="flex items-center link link-underline link-underline-black">
-                  <AiFillUnlock />
-                  <span className="ml-2 text-black">
-                    Logout
-                  </span>
-                </div>
-              </button>
-            ) : (
-              <Link to="/login" className="font-display max-w-sm text-2xl font-bold leading-tight">
-                <div className="flex items-center link link-underline link-underline-black">
-                  <AiFillLock />
-                  <span className="ml-2 text-black">
-                    Login
-                  </span>
-                </div>
-              </Link>
-            )}
-          </div>
         </div>
 
       </div>
