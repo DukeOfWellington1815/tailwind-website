@@ -1,25 +1,23 @@
-import React, { useEffect, useRef, useState} from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet'; // Import Helmet from react-helmet
-import {
-  AiFillHome,
-  AiFillFolderOpen,
-  AiFillMail,
-  AiFillCode,
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillLock,
-} from 'react-icons/ai';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AiFillHome, AiFillFolderOpen, AiFillMail, AiFillCode, AiFillGithub, AiFillLinkedin, AiFillLock, AiFillUnlock } from 'react-icons/ai';
 import logo from '../assets/images/logo512.png';
 import './Header.css';
 import '../assets/styles/corporateDesign.css';
+import useSession from '../middleware/session'; // Import the useSession hook from the correct location
+import Cookies from 'js-cookie';
 
 export default function Header() {
+  const navigate = useNavigate();
+  const sessionCookie = Cookies.get('session');
   const [isOpen, setIsOpen] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const buttonRef = useRef();
   const menuRef = useRef();
   const logoRef = useRef();
+
+  // Use the useSession hook here
+  const { logout, user } = useSession(); // Destructure the user from the useSession hook
 
   useEffect(() => {
     if (!logoRef.current) return;
@@ -86,10 +84,35 @@ export default function Header() {
           </svg>
         </button>
 
-        {screenWidth >= 768 && (
-          <Link to="/login" className="absolute top-1/2 right-4 transform -translate-y-1/2 font-display max-w-sm text-2xl font-bold leading-tight">
-            <span className="link link-underline link-underline-black text-black">Login</span>
-          </Link>
+        {screenWidth < 768 && (
+          <div className="flex items-center space-x-4">
+            {sessionCookie && user ? (
+              <button
+                className="link link-underline link-underline-black text-black font-display max-w-sm text-xl font-bold leading-tight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bright-color focus:ring-white"
+                onClick={() => logout()}
+              >
+                <div className="flex items-center">
+                  <AiFillUnlock />
+                  <span className="ml-2">
+                    Logout
+                  </span>
+                </div>
+
+
+
+              </button>
+            ) : (
+              <Link to="/login" className="link link-underline link-underline-black text-black font-display max-w-sm text-xl font-bold leading-tight">
+                <div className="flex items-center">
+                  <AiFillLock />
+                  <span className="ml-2">
+                    Login
+                  </span>
+                </div>
+
+              </Link>
+            )}
+          </div>
         )}
 
         {screenWidth < 768 && (
@@ -99,9 +122,13 @@ export default function Header() {
               ['Dossier', '/dossier', <AiFillFolderOpen />],
               ['Projects', '/projects', <AiFillCode />],
               ['Contact', '/contact', <AiFillMail />],
-              ['Login', '/login', <AiFillLock />],
             ].map(([title, url, icon], index) => (
-              <Link key={index} to={url} className="font-display max-w-sm text-xl font-bold dark-color leading-tight block text-center" onClick={() => setIsOpen(false)}>
+              <Link
+                key={index}
+                to={url}
+                className="font-display max-w-sm text-xl font-bold dark-color leading-tight block text-center"
+                onClick={() => setIsOpen(false)}
+              >
                 <div className="flex items-center">
                   {icon}
                   <span className="ml-4 text-dark text-4xl link link-underline link-underline-black">
@@ -120,6 +147,7 @@ export default function Header() {
             </div>
           </div>
         )}
+
 
         <div className="hidden md:flex space-x-16">
           {[
