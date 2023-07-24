@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { Router } from "react-router-dom";
 
 const SESSION_COOKIE_KEY = "session";
 
@@ -36,8 +37,9 @@ export default function useSession() {
   };
 
   const logout = () => {
-    updateSession(defaultModel);
-  };
+    Cookies.remove(SESSION_COOKIE_KEY); // Deletes the cookie
+    setSession(defaultModel); // Resets the session state in the component
+  };  
 
   return {
     ...session,
