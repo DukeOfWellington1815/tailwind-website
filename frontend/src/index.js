@@ -13,6 +13,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import ProjectsPage from './pages/projects';
 import DossierPage from './pages/dossier';
 import LoginPage from './pages/login';
+import ContactPage from './pages/contact';
 import { Route, Routes } from 'react-router-dom';
 import withAuth from './withAuth'; // Import the withAuth HOC
 
@@ -33,6 +34,7 @@ root.render(
           <Route path="/projects" element={<ProtectedProjectsPage />} />
           <Route path="/dossier" element={<ProtectedDossierPage />} />
 
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<AareBern />} />
         </Routes>

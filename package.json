@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "This project includes the react frontend and the required backend servers",
   "main": "index.js",  "scripts": {
-    "start": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "start": "concurrently \"npm run start-frontend\" \"npm run start-login-backend\" \"npm run start-mail-backend\"",
     "start-frontend": "cd frontend && npm run start",
-    "start-backend": "cd backend && node server.js"
+    "start-login-backend": "cd backend && node loginServer.js",
+    "start-mail-backend": "cd backend && node mailServer.js"
   },
   "author": "FatMonkee",
   "license": "ISC",

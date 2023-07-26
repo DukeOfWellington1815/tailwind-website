@@ -18,3 +18,14 @@ export async function login({ username, password }) {
   const data = await response.json();
   return data; // Assuming the response only contains user data, without the token property
 }
+
+export async function getAllAbstracts() {
+  const response = await fetch(`${URL}/api/protected`)
+
+  if (!response.ok) {
+      return Promise.reject(response)
+  }
+
+  const data = await response.json()
+  return data
+}
