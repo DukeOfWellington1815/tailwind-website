@@ -10,20 +10,13 @@ require('dotenv').config(); // Load environment variables from .env file
 const app = express();
 const port = 5000;
 
-// Create a MySQL database connection
-const connection = mysql.createConnection({
+// Create a MySQL database connection pool
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err);
-    return;
-  }
-  console.log('Connected to the database.');
+  database: process.env.DB_DATABASE,
+  connectionLimit: 10 // Adjust the limit as per your requirements
 });
 
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -48,52 +41,57 @@ function verifyToken(req, res, next) {
   }
 }
 
-// Login route - Fetch users from the database
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
 
-  // Query the database to get the user
   const query = 'SELECT * FROM users WHERE username = ?';
-  connection.query(query, [username], (error, results) => {
+  pool.getConnection((error, connection) => {
     if (error) {
-      console.error('Error fetching user from the database:', error);
+      console.error('Error getting database connection:', error);
       return res.status(500).json({ error: 'Internal server error' });
     }
 
-    const user = results[0]; // Get the first user (assuming username is unique)
+    connection.query(query, [username], (error, results) => {
+      connection.release();
 
-    if (user && bcrypt.compareSync(password, user.password)) {
-      // Successful login
+      if (error) {
+        console.error('Error fetching user from the database:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
 
-      // Generate a JWT token
-      const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '48h' });
+      const user = results[0];
 
-      // Set the token in a cookie with the name "token", expires in 48 hours
-      res.cookie('token', token, { httpOnly: true, maxAge: 48 * 3600000 });
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '48h' });
 
-      // Send a success message
-      res.status(200).json({ message: 'Login successful', user: { username: user.username } });
-    } else {
-      // Invalid credentials
-      res.status(401).json({ error: 'Invalid username or password' });
-    }
+        res.cookie('token', token, { httpOnly: true, maxAge: 48 * 3600000 });
+
+        res.status(200).json({ message: 'Login successful', user: { username: user.username } });
+      } else {
+        res.status(401).json({ error: 'Invalid username or password' });
+      }
+    });
   });
 });
 
-// Retrieve abstracts from the database and post as JSON in the protected route
 app.get('/api/protected', verifyToken, (req, res) => {
-  // Only authorized users can access this route
-
-  // Query the database to get the abstracts
   const query = 'SELECT title, body FROM abstracts';
-  connection.query(query, (error, results) => {
+  pool.getConnection((error, connection) => {
     if (error) {
-      console.error('Error fetching abstracts from the database:', error);
+      console.error('Error getting database connection:', error);
       return res.status(500).json({ error: 'Internal server error' });
     }
 
-    // Send the abstracts as JSON
-    res.status(200).json(results);
+    connection.query(query, (error, results) => {
+      connection.release();
+
+      if (error) {
+        console.error('Error fetching abstracts from the database:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+      }
+
+      res.status(200).json(results);
+    });
   });
 });
 
