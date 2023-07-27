@@ -4,18 +4,27 @@ import "./ProjectAbstract.css";
 import logo from '../../assets/images/logo192.png';
 import kanal from '../../assets/images/kanal-offen.svg';
 import { getAllAbstracts } from '../../middleware/apiLogin';
+import useSession from '../../middleware/session';
 // Import other images as needed
-
 
 const ProjectAbstract = () => {
   const [abstracts, setAbstracts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  // Assuming you are using the useSession hook to get the token
+  const { token } = useSession();
+
   useEffect(() => {
     const loadAbstracts = async () => {
+      // Check if the token is available
+      if (!token) {
+        setLoading(false);
+        return;
+      }
+
       try {
-        const data = await getAllAbstracts();
+        const data = await getAllAbstracts(token);
         setAbstracts(data); // Assuming the response is an array of abstracts
         setLoading(false);
       } catch (error) {
@@ -24,7 +33,7 @@ const ProjectAbstract = () => {
       }
     };
     loadAbstracts();
-  }, []);
+  }, [token]); // Execute the effect whenever the token changes
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

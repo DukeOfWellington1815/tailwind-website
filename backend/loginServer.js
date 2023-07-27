@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(cors());
 
 function verifyToken(req, res, next) {
-  const token = req.cookies.token;
+  const token = req.headers.authorization;
 
   if (!token) {
     return res.status(401).json({ error: 'Access denied' });
@@ -63,10 +63,7 @@ app.post('/api/login', (req, res) => {
 
       if (user && bcrypt.compareSync(password, user.password)) {
         const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '48h' });
-
-        res.cookie('token', token, { httpOnly: true, maxAge: 48 * 3600000 });
-
-        res.status(200).json({ message: 'Login successful', user: { username: user.username } });
+        res.status(200).json({ token, message: 'Login successful', user: { username: user.username } });
       } else {
         res.status(401).json({ error: 'Invalid username or password' });
       }

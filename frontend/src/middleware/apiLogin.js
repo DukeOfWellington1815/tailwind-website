@@ -20,7 +20,7 @@ export async function login({ username, password }) {
 export async function getAllAbstracts(token) {
   const response = await fetch(`${URL}/api/protected`, {
     headers: {
-      Authorization: `Bearer ${token}`, // Include the token in the request header
+      Authorization: `${token}`,
     },
   });
 
