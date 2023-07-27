@@ -16,6 +16,7 @@ import LoginPage from './pages/login';
 import ContactPage from './pages/contact';
 import { Route, Routes } from 'react-router-dom';
 import withAuth from './withAuth'; // Import the withAuth HOC
+import NotFound from './pages/notfound';
 
 const ProtectedProjectsPage = withAuth(ProjectsPage); // Wrap the ProjectsPage component with the withAuth HOC
 const ProtectedDossierPage = withAuth(DossierPage); // Wrap the DossierPage component with the withAuth HOC
@@ -37,6 +38,7 @@ root.render(
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<AareBern />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
 
         {/* <AareBern /> */}
