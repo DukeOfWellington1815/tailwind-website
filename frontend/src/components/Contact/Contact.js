@@ -1,6 +1,14 @@
 import React from 'react';
+import { useEffect } from 'react';
+
+
 
 const Contact = () => {
+
+  useEffect(() => {
+    document.title = 'Contact Me';
+  }, []);
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-full max-w-xl">

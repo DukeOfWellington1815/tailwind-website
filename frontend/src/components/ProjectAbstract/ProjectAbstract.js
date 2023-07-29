@@ -12,6 +12,10 @@ const ProjectAbstract = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    document.title = 'Projects';
+  }, []);
+
   // Assuming you are using the useSession hook to get the token
   const { token } = useSession();
 

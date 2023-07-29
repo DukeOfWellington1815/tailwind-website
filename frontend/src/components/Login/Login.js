@@ -1,6 +1,6 @@
 // LoginPage.js
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../middleware/apiLogin.js';
 import useSession from '../../middleware/session.js';
@@ -15,6 +15,10 @@ const Login = () => {
 
   // Initialize the useSession hook
   const { login: sessionLogin, error: sessionError } = useSession();
+
+  useEffect(() => {
+    document.title = 'Sign in to your FatMonkee account';
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
