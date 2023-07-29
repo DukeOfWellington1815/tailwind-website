@@ -1,4 +1,3 @@
-// index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -15,40 +14,46 @@ import DossierPage from './pages/dossier';
 import LoginPage from './pages/login';
 import ContactPage from './pages/contact';
 import { Route, Routes } from 'react-router-dom';
-import withAuth from './withAuth'; // Import the withAuth HOC
+import withAuth from './withAuth';
 import NotFound from './pages/notfound';
+import useSession from './middleware/session'; // Replace 'path/to' with the actual path to useSession.js
 
-const ProtectedProjectsPage = withAuth(ProjectsPage); // Wrap the ProjectsPage component with the withAuth HOC
-const ProtectedDossierPage = withAuth(DossierPage); // Wrap the DossierPage component with the withAuth HOC
+const ProtectedProjectsPage = withAuth(ProjectsPage);
+const ProtectedDossierPage = withAuth(DossierPage);
+const ProtectedHomePage = withAuth(AareBern);
+
+const AppRouter = ({ isLoggedIn }) => (
+  <React.StrictMode>
+    {isLoggedIn && (
+      <header className="">
+        <Header />
+      </header>
+    )}
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/" element={<ProtectedHomePage />} />
+      <Route path="/projects" element={<ProtectedProjectsPage />} />
+      <Route path="/dossier" element={<ProtectedDossierPage />} />
+      <Route path="/*" element={<NotFound />} />
+    </Routes>
+  </React.StrictMode>
+);
+
+const AppWrapper = () => {
+  // Get the isLoggedIn value from the useSession hook
+  const { isLoggedIn } = useSession();
+
+  return <AppRouter isLoggedIn={isLoggedIn} />;
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Wrap the AppWrapper component with the Router component
 root.render(
-  <React.StrictMode>
-    <Router>
-      <div className="">
-        <header className="">
-          <Header />
-        </header>
-
-        <Routes>
-          {/* Use the protected components for routes that should be accessible only to logged-in users */}
-          <Route path="/projects" element={<ProtectedProjectsPage />} />
-          <Route path="/dossier" element={<ProtectedDossierPage />} />
-
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<AareBern />} />
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
-
-        {/* <AareBern /> */}
-        {/* <App /> */}
-        {/* <Aare/>   */}
-
-        {/* <GameLib/> */}
-      </div>
-    </Router>
-  </React.StrictMode>
+  <Router>
+    <AppWrapper />
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

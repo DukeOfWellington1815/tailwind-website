@@ -173,7 +173,6 @@ export default function Header() {
 
         <div className="hidden md:flex space-x-16">
           {[
-            ['Home', '/'],
             ['Dossier', '/dossier'],
             ['Projects', '/projects'],
             ['Contact', '/contact'],

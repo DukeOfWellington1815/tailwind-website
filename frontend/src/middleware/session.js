@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 
 const SESSION_COOKIE_KEY = "session";
-
 const defaultModel = {
   user: null,
 };
@@ -24,6 +23,8 @@ export default function useSession() {
     setReady(true);
   }, []);
 
+  const isLoggedIn = !!session.user; // Check if the 'user' property exists to determine if logged in
+
   const updateSession = (data) => {
     setSession(data);
     Cookies.set(SESSION_COOKIE_KEY, JSON.stringify(data), { expires: 2 });
@@ -43,6 +44,7 @@ export default function useSession() {
 
   return {
     ...session,
+    isLoggedIn,
     ready,
     login,
     logout,

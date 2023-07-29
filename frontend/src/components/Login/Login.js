@@ -1,13 +1,15 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { login } from "../../middleware/apiLogin.js";
-import useSession from "../../middleware/session.js";
+// LoginPage.js
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../middleware/apiLogin.js';
+import useSession from '../../middleware/session.js';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   document.body.classList.add('no-scroll');
 
@@ -24,15 +26,20 @@ const Login = () => {
       // Login successful, set user session using the useSession hook
       sessionLogin({ user: response.user, token: response.token });
 
-      setError(""); // Clear any previous errors on successful login
-      navigate("/"); // Redirect to home or protected route
+      setError(''); // Clear any previous errors on successful login
+      navigate('/'); // Redirect to home or protected route
     } catch (error) {
-      setError("Invalid username or password");
+      setError('Invalid username or password');
     }
   };
 
   // Show session-level or API login errors
   const errorMessage = error || sessionError;
+
+  // Function to handle the button click to request access
+  const handleRequestAccess = () => {
+    navigate('/contact'); // Redirect to the contact page
+  };
 
   return (
     <div className="flex justify-center items-center h-screen">
@@ -70,6 +77,12 @@ const Login = () => {
               type="submit"
             >
               Login
+            </button>
+            <button
+              className="ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={handleRequestAccess}
+            >
+              Request Access
             </button>
           </div>
         </form>
