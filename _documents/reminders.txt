@@ -1,0 +1,23 @@
+anmeldesystem : abstract
+
+Impressum
+
+Link zu meiner Email
+
+Email redirect zu outlook
+
+Copyright
+
+React PDF for prettier pdfs 
+
+Skills page
+
+link to authors of abstracts 
+
+loading bars / animations
+
+tags (for searching project abstracts)
+
+BadiBuddy Screenshot
+
+BreadCrumb Link
