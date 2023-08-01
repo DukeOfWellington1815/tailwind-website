@@ -10,18 +10,19 @@ import Aare from './components/Aare/Aare';
 import GameLib from './components/GameLib/GameLib';
 import AareBern from './components/AareBern/AareBern';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ProjectsPage from './pages/projects';
-import DossierPage from './pages/dossier';
+import projectsPage from './pages/projects';
+import dossierPage from './pages/dossier';
 import LoginPage from './pages/login';
 import ContactPage from './pages/contact';
 import { Route, Routes } from 'react-router-dom';
 import withAuth from './withAuth';
 import NotFound from './pages/notfound';
 import useSession from './middleware/session'; // Replace 'path/to' with the actual path to useSession.js
+import homePage from './pages/home';
 
-const ProtectedProjectsPage = withAuth(ProjectsPage);
-const ProtectedDossierPage = withAuth(DossierPage);
-const ProtectedHomePage = withAuth(AareBern);
+const ProtectedProjectsPage = withAuth(projectsPage);
+const ProtectedDossierPage = withAuth(dossierPage);
+const ProtectedHomePage = withAuth(homePage);
 
 const AppRouter = ({ isLoggedIn }) => (
   <React.StrictMode>
