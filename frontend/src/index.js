@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import Header from './layouts/Header';
+import Footer from './layouts/Footer';
 import './assets/styles/corporateDesign.css';
 import Aare from './components/Aare/Aare';
 import GameLib from './components/GameLib/GameLib';
@@ -37,6 +38,10 @@ const AppRouter = ({ isLoggedIn }) => (
       <Route path="/dossier" element={<ProtectedDossierPage />} />
       <Route path="/*" element={<NotFound />} />
     </Routes>
+
+    <footer className="">
+      <Footer />
+    </footer>
   </React.StrictMode>
 );
 

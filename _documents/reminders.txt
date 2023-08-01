@@ -1,8 +1,8 @@
 anmeldesystem : abstract
 
-Impressum
-
-Link zu meiner Email
+Footer:
+    Impressum
+    Link zu meiner Email
 
 Email redirect zu outlook
 

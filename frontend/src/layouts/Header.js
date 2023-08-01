@@ -74,10 +74,6 @@ export default function Header() {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    document.title = 'New Website Name'; // Replace 'New Website Name' with your desired website name
-  }, []); // This effect runs only once on component mount
-
   const handleLogout = () => {
     // Step 2: Show the logout confirmation popup
     setShowLogoutPopup(true);
