@@ -1,1 +1,92 @@
 @import "../assets/styles/corporateDesign.css";
+
+/* Footer.css */
+.footer-container {
+    position: relative;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: #fff; /* White text color */
+  }
+  
+  .footer-content .links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-content .links button {
+    background: none;
+    border: none;
+    color: #fff; /* White text color */
+    cursor: pointer;
+    margin-right: 1rem; /* Add margin to separate the elements */
+  }
+  
+  .footer-content .links a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+  }
+  
+  .footer-content .links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #fff; /* White background */
+    padding: 1rem;
+    border-radius: 4px;
+  }
+  
+  .popup-content h2 {
+    color: #000; /* Black text color */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content p {
+    color: #000; /* Black text color */
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content button {
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-content .links {
+      margin-top: 0.5rem;
+    }
+  }
+  
