@@ -23,3 +23,7 @@ BadiBuddy Screenshot
 BreadCrumb Link
 
 English page
+
+add soft skills to skills page
+
+CV (dossierPage) shows information one by one. Starting with main message. More information appears as you scroll down
