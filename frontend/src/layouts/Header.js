@@ -150,6 +150,7 @@ export default function Header() {
           <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
             {[
               ['Home', '/', <AiFillHome />],
+              ['Skills', '/skills', <AiFillCode />],
               ['Dossier', '/dossier', <AiFillFolderOpen />],
               ['Projects', '/projects', <AiFillCode />],
               ['Contact', '/contact', <AiFillMail />],
@@ -181,6 +182,7 @@ export default function Header() {
 
         <div className="hidden md:flex space-x-16">
           {[
+            ['Skills', '/skills'],
             ['Dossier', '/dossier'],
             ['Projects', '/projects'],
             ['Contact', '/contact'],
