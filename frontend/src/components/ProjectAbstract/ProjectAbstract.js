@@ -42,7 +42,7 @@ const ProjectAbstract = () => {
   }, [token]); // Execute the effect whenever the token changes
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container max-w-2xl">
       <Carousel showStatus={false} showThumbs={false}>
         {loading ? (
           <p>Loading abstracts...</p>
@@ -74,7 +74,7 @@ const ProjectAbstract = () => {
                 </div>
                 <h2 className="text-lg font-semibold mb-2 primary-color">{abstract.title}</h2>
                 <p className="text-gray-700">{abstract.body}</p>
-                <button className="mt-6 bg-dark-color p-4 text-white font-semibold rounded-md hover:bg-dark-color hover:text-bright-color transition duration-300 ease-in-out">
+                <button className="m-6 bg-dark-color p-4 text-white font-semibold rounded-md hover:bg-dark-color hover:text-bright-color transition duration-300 ease-in-out">
                   Details
                 </button>
               </div>
