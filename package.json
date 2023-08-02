@@ -2,7 +2,8 @@
   "name": "fatmonkee-full-stack",
   "version": "1.0.0",
   "description": "This project includes the react frontend and the required backend servers",
-  "main": "index.js",  "scripts": {
+  "main": "index.js",
+  "scripts": {
     "start": "concurrently \"npm run start-frontend\" \"npm run start-login-backend\" \"npm run start-mail-backend\"",
     "start-frontend": "cd frontend && npm run start",
     "start-login-backend": "cd backend && node loginServer.js",
@@ -11,6 +12,7 @@
   "author": "FatMonkee",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "react-router-dom": "^6.14.2"
   }
 }
