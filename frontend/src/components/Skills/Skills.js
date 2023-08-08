@@ -1,36 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Skills.css'
+import './Skills.css';
+import SkillText from '../../assets/texts/skills.json';
 
-const skills = [
-  { category: 'Programming Languages', list: [
-    { name: 'JavaScript', level: 90 },
-    { name: 'Python', level: 80 },
-    { name: 'Java', level: 70 },
-    { name: 'C++', level: 60 }
-  ]},
-  { category: 'Web Development', list: [
-    { name: 'HTML', level: 95 },
-    { name: 'CSS', level: 85 },
-    { name: 'React', level: 90 },
-    { name: 'Node.js', level: 75 }
-  ]},
-  { category: 'Database', list: [
-    { name: 'MySQL', level: 70 },
-    { name: 'MongoDB', level: 65 }
-  ]},
-  { category: 'Version Control', list: [
-    { name: 'Git', level: 85 },
-    { name: 'GitHub', level: 80 }
-  ]},
-  { category: 'Other Skills', list: [
-    { name: 'Problem Solving', level: 95 },
-    { name: 'Data Structures', level: 90 },
-    { name: 'Algorithms', level: 85 }
-  ]}
-];
+const skills = SkillText;
 
 export default function SkillsPage() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [visibleIndexes, setVisibleIndexes] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,10 +13,13 @@ export default function SkillsPage() {
       if (skillsSection) {
         const skillsTop = skillsSection.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
+        const currentIndex = Math.min(
+          Math.floor((windowHeight * 0.75 - skillsTop) / 100), // Adjust 100 to a suitable value
+          skills.length - 1
+        );
 
-        if (skillsTop < windowHeight * 0.75) {
-          setIsVisible(true);
-        }
+        const newIndexes = Array.from({ length: currentIndex + 1 }, (_, index) => index);
+        setVisibleIndexes(newIndexes);
       }
     };
 
@@ -56,18 +34,22 @@ export default function SkillsPage() {
     <div className="flex items-center justify-center">
       <div
         id="skills-section"
-        className={`bg-white p-8 rounded shadow-md w-96 ${
-          isVisible ? 'fade-in' : 'hidden'
-        }`}
+        className={`bg-white p-8 rounded shadow-md w-96`}
       >
         <h2 className="text-2xl font-bold mb-4">My Skills</h2>
         <div className="space-y-4">
-          {skills.map(skillCategory => (
+          {skills.map((skillCategory, index) => (
             <div key={skillCategory.category}>
               <h3 className="text-lg font-semibold mb-2">{skillCategory.category}</h3>
               <ul className="space-y-2">
-                {skillCategory.list.map(skill => (
-                  <li key={skill.name}>
+                {skillCategory.list.map((skill, skillIndex) => (
+                  <li
+                    key={skill.name}
+                    className={`${
+                      visibleIndexes.includes(skillIndex) ? 'fade-in' : 'hidden'
+                    } transition-opacity duration-500 ease-in`}
+                    style={{ animationDelay: `${skillIndex * 0.2}s` }} // Adjust the delay value as needed
+                  >
                     <div className="flex items-center justify-between">
                       <span>{skill.name}</span>
                       <div className="flex items-center space-x-2">
