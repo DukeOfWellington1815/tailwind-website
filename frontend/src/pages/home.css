@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Take up the whole viewport height */
+    max-width: 100vh;
+    text-align: center;
+    padding: 0 20px; /* Add some padding to the sides */
+  }
