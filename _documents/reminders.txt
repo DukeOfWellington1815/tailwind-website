@@ -2,9 +2,9 @@ anmeldesystem : abstract
 
 Footer:
     Impressum
-    Link zu meiner Email
+//    Link zu meiner Email
 
-Email redirect zu outlook
+//Email redirect zu outlook
 
 Copyright
 
@@ -16,7 +16,7 @@ link to authors of abstracts
 
 loading bars / animations
 
-tags (for searching project abstracts)
+-tags (for searching project abstracts)
 
 BadiBuddy Screenshot
 
@@ -27,3 +27,5 @@ English page
 add soft skills to skills page
 
 CV (dossierPage) shows information one by one. Starting with main message. More information appears as you scroll down
+
+Remove Header Background Color

@@ -19,7 +19,7 @@ import withAuth from './withAuth';
 import NotFound from './pages/notfound';
 import useSession from './middleware/session'; // Replace 'path/to' with the actual path to useSession.js
 import homePage from './pages/home';
-import skillsPage from './pages/skills';
+import SkillsPage from './pages/skills';
 
 const ProtectedProjectsPage = withAuth(projectsPage);
 const ProtectedDossierPage = withAuth(dossierPage);
@@ -34,7 +34,7 @@ const AppRouter = ({ isLoggedIn }) => (
     )}
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/skills" element={<skillsPage />} />
+      <Route path="/skills" element={<SkillsPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/" element={<ProtectedHomePage />} />
       <Route path="/projects" element={<ProtectedProjectsPage />} />
