@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './Skills.css'
 
 const skills = [
   { category: 'Programming Languages', list: [
@@ -29,9 +30,36 @@ const skills = [
 ];
 
 export default function SkillsPage() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const skillsSection = document.getElementById('skills-section');
+      if (skillsSection) {
+        const skillsTop = skillsSection.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (skillsTop < windowHeight * 0.75) {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className=" flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-md w-96">
+    <div className="flex items-center justify-center">
+      <div
+        id="skills-section"
+        className={`bg-white p-8 rounded shadow-md w-96 ${
+          isVisible ? 'fade-in' : 'hidden'
+        }`}
+      >
         <h2 className="text-2xl font-bold mb-4">My Skills</h2>
         <div className="space-y-4">
           {skills.map(skillCategory => (
