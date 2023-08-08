@@ -1,14 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/images/logo512.png';
 import AareBern from '../components/AareBern/AareBern';
+import Skills from '../components/Skills/Skills';
+import ProjectAbstract from '../components/ProjectAbstract/ProjectAbstract';
 
-export default function homePage() {
+export default function HomePage() {
+  const welcomeText = "Welcome to My Portfolio!";
+  const [typedMessage, setTypedMessage] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < welcomeText.length) {
+      const timeout = setTimeout(() => {
+        setTypedMessage(typedMessage + welcomeText[currentIndex]);
+        setCurrentIndex(currentIndex + 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, typedMessage]);
+
   return (
     <div className='flex flex-col items-center'>
-      <AareBern />
-      <div className='flex justify-center'>
-        <img src={logo} alt="logo" className='rounded-full m-5 max-w-full' />
+
+      <div className='text-2xl font-bold mt-5'>
+        {typedMessage}
       </div>
+      
+      <div className='flex justify-center w-screen h-screen'>
+        <div className='flex items-center justify-center w-full h-full p-5'>
+          <img src={logo} alt="logo" className='rounded-full max-w-full max-h-full' />
+        </div>
+      </div>
+
+
+
+      <div className='my-5'>
+        <Skills/>
+      </div>
+
+      <div className='my-5'>
+        <ProjectAbstract/>
+      </div>
+
+      <div className='my-5'>
+        <AareBern />
+      </div>
+      
     </div>
   );
 }
