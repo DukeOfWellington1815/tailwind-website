@@ -42,7 +42,7 @@ const ProjectAbstract = () => {
   }, [token]); // Execute the effect whenever the token changes
 
   return (
-    <div className="carousel-container max-w-2xl">
+    <div className="carousel-container max-w-2xl bg-bright-color">
       <Carousel showStatus={false} showThumbs={false}>
         {loading ? (
           <p>Loading abstracts...</p>
@@ -51,7 +51,7 @@ const ProjectAbstract = () => {
         ) : (
           abstracts.map((abstract, index) => (
             <div key={index} className="carousel-item">
-              <div className="bg-bright-color rounded-lg p-6 shadow-md">
+              <div className=" rounded-lg p-6 shadow-md">
                 <div className="relative">
                   {abstract.image ? (
                     <img
