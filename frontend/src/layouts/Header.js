@@ -86,7 +86,7 @@ export default function Header() {
   };
 
   return (
-    <nav className="bg-bright-color shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: '-20px 0px 15px -3px rgba(0,0,0,0.1)' }}>
+    <nav className=" shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: '-20px 0px 15px -3px rgba(0,0,0,0.1)' }}>
       <div className="w-full h-full flex justify-center items-center relative">
 
         <Link to="/">
@@ -102,14 +102,14 @@ export default function Header() {
         {screenWidth >= 768 && (
           <div className="desktop-logout absolute top-1/2 right-4 transform -translate-y-1/2 font-display max-w-sm text-2xl font-bold leading-tight link link-underline link-underline-black">
             {sessionCookie && user ? (
-              <button className="text-black" onClick={handleLogout}>
+              <button className="bright-color" onClick={handleLogout}>
                 <div className="flex items-center">
                   <AiFillUnlock />
                   <span className="ml-2">Logout</span>
                 </div>
               </button>
             ) : (
-              <Link to="/login" className="text-black">
+              <Link to="/login" className="bright-color">
                 <div className="flex items-center">
                   <AiFillLock />
                   <span className="ml-2">Login</span>
@@ -123,7 +123,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {sessionCookie && user ? (
               <button
-                className="link link-underline link-underline-black text-black font-display max-w-sm text-xl font-bold leading-tight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bright-color focus:ring-white"
+                className="link link-underline link-underline-black bright-color font-display max-w-sm text-xl font-bold leading-tight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-bright-color focus:ring-white"
                 onClick={handleLogout}
               >
                 <div className="flex items-center">
@@ -134,7 +134,7 @@ export default function Header() {
                 </div>
               </button>
             ) : (
-              <Link to="/login" className="link link-underline link-underline-black text-black font-display max-w-sm text-xl font-bold leading-tight">
+              <Link to="/login" className="link link-underline link-underline-black bright-color font-display max-w-sm text-xl font-bold leading-tight">
                 <div className="flex items-center">
                   <AiFillLock />
                   <span className="ml-2">
@@ -188,7 +188,7 @@ export default function Header() {
             ['Contact', '/contact'],
           ].map(([title, url], index) => (
             <Link key={index} to={url} className="font-display max-w-sm text-2xl font-bold leading-tight">
-              <span className="link link-underline link-underline-black text-black">
+              <span className="link link-underline link-underline-black bright-color">
                 {title}
               </span>
             </Link>
@@ -199,7 +199,7 @@ export default function Header() {
         {showLogoutPopup && (
           <div className="fixed top-0 left-0 w-screen h-screen bg-opacity-80 bg-black flex justify-center items-center">
             <div className="bg-white p-4 rounded shadow">
-              <p className="text-black text-xl font-semibold">Are you sure you want to logout?</p>
+              <p className="bright-color text-xl font-semibold">Are you sure you want to logout?</p>
               <div className="flex justify-end mt-4">
                 <button
                   className="px-4 py-2 mr-2 bg-gray-200 rounded"
