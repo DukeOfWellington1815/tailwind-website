@@ -1,32 +1,38 @@
 {
-    "experiences": [
+    "education": [
       {
         "title": "BWD Bern",
-        "year": "20XX"
+        "year": "2021-2024"
+      },
+      {
+        "title": "gibb Bern",
+        "year": "2021-2024"
       },
       {
         "title": "BBC",
-        "year": "20XX"
+        "year": "2021-2023"
       },
       {
-        "title": "OSZ",
-        "year": "20XX-20XX"
-      },
+        "title": "OSZ Ittigen",
+        "year": "2018-2021"
+      }
+    ],
+    "vwork": [
       {
-        "title": "Volunteer Work at TunBern",
-        "year": "20XX-20XX"
+        "title": "tunBern",
+        "year": "2023"
       },
       {
         "title": "IMS",
-        "year": "20XX-20XX"
+        "year": "2022"
       },
       {
         "title": "IMS Infoabend",
-        "year": "20XX"
+        "year": "2023"
       },
       {
         "title": "IMS TdoT",
-        "year": "20XX"
+        "year": "2022"
       }
     ],
     "credits": {
