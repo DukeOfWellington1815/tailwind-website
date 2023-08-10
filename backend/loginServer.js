@@ -82,14 +82,14 @@ app.get('/api/abstracts', verifyToken, (req, res) => {
   a.own_role,
   a.year,
   JSON_ARRAYAGG(i.imagepath) AS imagepaths,
-  JSON_ARRAYAGG(JSON_OBJECT('name', c.name, 'role', ac.role)) AS collaborators
+  JSON_ARRAYAGG(JSON_OBJECT('name', c.name, 'role', ac.role, 'website_url', c.website_url)) AS collaborators
 FROM Abstracts AS a
 LEFT JOIN Images AS i ON a.id = i.abstract_id
 LEFT JOIN AbstractCollaborators AS ac ON a.id = ac.abstract_id
 LEFT JOIN Collaborators AS c ON ac.collaborator_id = c.id
 GROUP BY a.id;
+`;
 
-  `;
 
   pool.getConnection((error, connection) => {
     if (error) {
