@@ -22,9 +22,9 @@
 
 /* Style for the side images */
 .carousel-item .slick-slide:not(.slick-center) img {
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  max-height: 60vh; /* Adjust the height as needed */
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  max-height: 70vh; /* Adjust the height as needed */
   width: auto;
   opacity: 0.3;
   transition: opacity 0.3s ease-in-out;
