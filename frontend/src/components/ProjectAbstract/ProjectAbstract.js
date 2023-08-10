@@ -77,8 +77,7 @@ const ProjectAbstract = () => {
           <div key={index} className="carousel-item">
 
             <div className='text-7xl font-bold mt-16 mb-4 bright-color uppercase mx-32'> 
-              <h2>{abstract.title}–</h2>
-              <h2 className='mt-4'>placeholder text blabla</h2>
+              <h2>{abstract.title}– <br/>placeholder text blabla</h2>
               <hr></hr>
             </div>
             
