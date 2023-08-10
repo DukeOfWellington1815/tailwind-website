@@ -4,26 +4,29 @@
     max-width: 100vw !important;
 }
 
-.image-container img {
-    transition: all 0.3s ease-in-out;
+/* Remove the existing .center-image and .side-image classes if they are not needed anymore */
+
+.carousel-item .slick-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-.slick-current .image-container img {
-    max-height: 80vh;
-    /* Adjust the height as needed */
-    width: auto;
+/* Style for the center image */
+.carousel-item .slick-center img {
+  max-height: 80vh; /* Adjust the height as needed */
+  width: auto;
 }
 
-.side-image .image-container img {
-    max-height: 70vh;
-    /* Adjust the height as needed */
-    width: auto;
+/* Style for the side images */
+.carousel-item .slick-slide:not(.slick-center) img {
+  max-height: 60vh; /* Adjust the height as needed */
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.slick-current {
-    max-height: 90vh !important;
-}
-
-.center-image {
-    max-height: 70vh !important;
+.carousel-item .slick-slide:not(.slick-center):hover img {
+  opacity: 1;
 }

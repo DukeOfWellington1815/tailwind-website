@@ -5,7 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import useSession from '../../middleware/session';
 import { getAllAbstracts } from '../../middleware/apiLogin';
 import placeholder from '../../assets/images/placeholder.png';
-import "./ProjectAbstract.css";
+import "./ProjectAbstract.css"; // If needed
+import "../../assets/styles/corporateDesign.css"; // Make sure to adjust the path if needed
 
 const ProjectAbstract = () => {
   const [abstracts, setAbstracts] = useState([]);
@@ -50,10 +51,15 @@ const ProjectAbstract = () => {
     nextArrow: null,
     prevArrow: null,
     beforeChange: (currentSlide, nextSlide) => {
-      const imageContainers = document.querySelectorAll(".image-container img");
-      imageContainers.forEach((img, index) => {
-        img.classList.toggle("center-image", index === nextSlide);
-        img.classList.toggle("side-image", index !== nextSlide);
+      // Use Slick's setActiveSlide method to apply appropriate classes
+      const slider = document.querySelector(".slick-slider");
+      slider.querySelectorAll(".slick-slide").forEach((slide, index) => {
+        slide.classList.remove("center-image", "side-image");
+        if (index === nextSlide) {
+          slide.classList.add("center-image");
+        } else {
+          slide.classList.add("side-image");
+        }
       });
     },
   };
@@ -70,54 +76,29 @@ const ProjectAbstract = () => {
           <div key={index} className="carousel-item">
             <Slider {...slickSettings}>
               {abstract.images && abstract.images.length > 0 ? (
-                // Render images if available
                 abstract.images.map((image, imgIndex) => (
-                  <div
-                    key={imgIndex}
-                    className={`relative center-image'}`}
-                  >
-                    <div className="image-container">
-                      <img
-                        src={image}
-                        alt={abstract.title}
-                        className="h-screen w-full object-cover rounded-md mb-4"
-                      />
-                    </div>
-                    <div className={`absolute inset-0 bg-dark-color bg-opacity-40 rounded-md transition-opacity ${imgIndex === 2 ? 'opacity-100' : 'opacity-0'} hover:opacity-100`}>
-                      <div className="flex items-center justify-center h-full">
-                        <button className="text-bright-color font-semibold">View Details</button>
-                      </div>
-                    </div>
+                  <div key={imgIndex} className="relative image-container">
+                    <img
+                      src={image}
+                      alt={abstract.title}
+                      className="h-screen w-full object-cover rounded-md mb-4 mx-auto"
+                    />
                   </div>
                 ))
               ) : (
-                // Render placeholders if no images available
                 placeholderImages.map((image, imgIndex) => (
-                  <div
-                    key={imgIndex}
-                    className={`relative center-image'}`}
-                  >
-                    <div className="image-container">
-                      <img
-                        src={image}
-                        alt="Placeholder"
-                        className="h-screen w-full object-cover rounded-md mb-4"
-                      />
-                    </div>
-                    <div className={`absolute inset-0 bg-dark-color bg-opacity-40 rounded-md transition-opacity hover:opacity-100`}>
-                      <div className="flex items-center justify-center h-full">
-                        <button className="text-bright-color font-semibold">View Details</button>
-                      </div>
-                    </div>
+                  <div key={imgIndex} className="relative image-container">
+                    <img
+                      src={image}
+                      alt="Placeholder"
+                      className="h-screen w-full object-cover rounded-md mb-4 mx-auto"
+                    />
                   </div>
                 ))
               )}
             </Slider>
             <h2 className="text-lg font-semibold mb-2 primary-color">{abstract.title}</h2>
             <p className="text-gray-700">{abstract.body}</p>
-            <button className="m-6 bg-dark-color p-4 text-white font-semibold rounded-md hover:bg-dark-color hover:text-bright-color transition duration-300 ease-in-out">
-              Details
-            </button>
           </div>
         ))
       )}
