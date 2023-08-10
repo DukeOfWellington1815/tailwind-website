@@ -5,17 +5,18 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const mysql = require('mysql2');
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
 const port = 5000;
 
+// Create a MySQL database connection pool
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  connectionLimit: 10
+  connectionLimit: 10 // Adjust the limit as per your requirements
 });
 
 const SECRET_KEY = process.env.SECRET_KEY;
@@ -72,20 +73,22 @@ app.post('/api/login', (req, res) => {
 
 app.get('/api/abstracts', verifyToken, (req, res) => {
   const query = `
-    SELECT
-      a.id,
-      a.title,
-      a.slogan,
-      i.imagepath,
-      a.body,
-      ac.role AS collaborator_role,
-      a.type,
-      a.role AS own_role,
-      a.year
-    FROM Abstracts a
-    LEFT JOIN Images i ON a.id = i.abstract_id
-    LEFT JOIN AbstractCollaborators ac ON a.id = ac.abstract_id
-    LEFT JOIN Collaborators c ON ac.collaborator_id = c.id
+  SELECT
+  a.id,
+  a.title,
+  a.slogan,
+  a.body,
+  a.type,
+  a.own_role,
+  a.year,
+  JSON_ARRAYAGG(i.imagepath) AS imagepaths,
+  JSON_ARRAYAGG(JSON_OBJECT('name', c.name, 'role', ac.role)) AS collaborators
+FROM Abstracts AS a
+LEFT JOIN Images AS i ON a.id = i.abstract_id
+LEFT JOIN AbstractCollaborators AS ac ON a.id = ac.abstract_id
+LEFT JOIN Collaborators AS c ON ac.collaborator_id = c.id
+GROUP BY a.id;
+
   `;
 
   pool.getConnection((error, connection) => {
