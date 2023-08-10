@@ -77,14 +77,13 @@ const ProjectAbstract = () => {
 
   return (
     <div className="carousel-container">
-      <h1 className="text-3xl font-semibold text-center mb-6 primary-color">Projects</h1>
       {loading ? (
         <p>Loading abstracts...</p>
       ) : error ? (
         <p>{error}</p>
       ) : (
         abstracts.map((abstract, index) => (
-          <div key={index} className="carousel-item">
+          <div key={index} className="carousel-item my-64">
             <div className='text-7xl font-bold mt-16 mb-4 bright-color uppercase mx-32'>
               <h2>{abstract.title}– <br />{abstract.slogan}</h2>
               <hr></hr>
@@ -114,34 +113,63 @@ const ProjectAbstract = () => {
               )}
             </Slider>
 
+            <div className="flex flex-col items-center mt-10">
+              <div className="flex flex-row">
+                <div className="flex-1/3 text-xl max-w-md pr-24">
+                  <div className="flex flex-col">
+                    <div className="w-full">
+                      <table className="table bright-color text-2xl">
+                        <tbody>
+                          <tr>
+                            <td className="pr-2">Year:</td>
+                            <td className="tetriary-color">{abstract.year}</td>
+                          </tr>
+                          <tr>
+                            <td className="pr-2">Type:</td>
+                            <td className="primary-color">{abstract.type}</td>
+                          </tr>
+                          <tr>
+                            <td className="pr-2">Role:</td>
+                            <td className="secondary-color">{abstract.own_role}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-2/3 max-w-2xl ml-60">
+                  <p className="bright-color text-4xl">{abstract.body}</p>
+                  <div className="flex items-center justify-end mt-4">
+                    <a href={`/abstract/${abstract.id}`} className="dark-color bg-primary-color px-4 py-2 rounded-md hover:opacity-80">
+                      Read More
+                    </a>
+                  </div>
+                  <div className="mt-10">
+                    <p className="bright-color text-md">
+                      {abstract.collaborators &&
+                        abstract.collaborators.map((collaborator, collaboratorIndex) => (
+                          <span key={collaboratorIndex}>
+                            <span className="text-gray-500 uppercase">{collaborator.role}</span>{" "}
+                            <a
+                              href={collaborator.website_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="uppercase"
+                            >
+                              {collaborator.name}
+                            </a>
+                            {collaboratorIndex !== abstract.collaborators.length - 1 && ", "}
+                          </span>
+                        ))}
+                    </p>
+                  </div>
+                </div>
 
-            <h2 className="text-lg font-semibold mb-2 primary-color">{abstract.title}</h2>
-            <p className="text-gray-700">{abstract.body}</p>
-            <table className="table">
-              <tbody>
-                <tr>
-                  <td>Type:</td>
-                  <td>{abstract.type}</td>
-                </tr>
-                <tr>
-                  <td>Role:</td>
-                  <td>{abstract.own_role}</td>
-                </tr>
-                <tr>
-                  <td>Year:</td>
-                  <td>{abstract.year}</td>
-                </tr>
-              </tbody>
-            </table>
-            <h3 className="text-lg font-semibold primary-color">Collaborators:</h3>
-            <ul className='bright-color'>
-              {abstract.collaborators &&
-                abstract.collaborators.map((collaborator, collaboratorIndex) => (
-                  <li key={collaboratorIndex}>
-                    {collaborator.name} - {collaborator.role}
-                  </li>
-                ))}
-            </ul>
+
+              </div>
+            </div>
+
+
           </div>
         ))
       )}
