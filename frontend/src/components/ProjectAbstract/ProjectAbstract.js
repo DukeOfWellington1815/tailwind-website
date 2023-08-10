@@ -120,7 +120,7 @@ export default function ProjectAbstract() {
                 <hr />
               </div>
       
-              <Slider {...slickSettings}>
+              {/* <Slider {...slickSettings}>
                 {abstract.imagepaths && abstract.imagepaths.length > 0 ? (
                   abstract.imagepaths.map((image, imgIndex) => (
                     <div key={imgIndex} className="relative image-container">
@@ -132,6 +132,19 @@ export default function ProjectAbstract() {
                     </div>
                   ))
                 ) : (
+                  placeholderImages.map((image, imgIndex) => (
+                    <div key={imgIndex} className="relative image-container">
+                      <img
+                        src={image}
+                        alt="Placeholder"
+                        className={`h-screen w-full object-cover rounded-md mx-auto content ${isVisible ? 'visible' : ''}`}
+                      />
+                    </div>
+                  ))
+                )}
+              </Slider> */}
+
+              <Slider {...slickSettings}>{(
                   placeholderImages.map((image, imgIndex) => (
                     <div key={imgIndex} className="relative image-container">
                       <img
