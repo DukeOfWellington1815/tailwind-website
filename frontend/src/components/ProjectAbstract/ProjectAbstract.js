@@ -59,6 +59,8 @@ const ProjectAbstract = () => {
     centerPadding: "15%",
     nextArrow: null,
     prevArrow: null,
+    autoplay: true,
+    autoplaySpeed: 5000,
     beforeChange: (currentSlide, nextSlide) => {
       // Use Slick's setActiveSlide method to apply appropriate classes
       const slider = document.querySelector(".slick-slider");
