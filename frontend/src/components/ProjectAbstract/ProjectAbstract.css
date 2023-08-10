@@ -61,3 +61,53 @@
 .carousel-item .slick-slide:not(.slick-center):hover img {
   opacity: 1;
 }
+
+/* Add this rule for the fade-in effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  opacity: 0;
+}
+
+/* Add this rule for the fade-in effect */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 1s, transform 1s;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Add this rule to hide content initially */
+.carousel-item .content {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s, transform 2s;
+}
+
+/* Add this rule to show content with fade-in and slide-in animation */
+.carousel-item .content.visible {
+  opacity: 1;
+  transform: translateX(0); /* Change from 'translateY' to 'translateX' */
+}
