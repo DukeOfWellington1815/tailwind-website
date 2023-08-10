@@ -28,4 +28,6 @@ add soft skills to skills page
 
 CV (dossierPage) shows information one by one. Starting with main message. More information appears as you scroll down
 
-Remove Header Background Color
+// Remove Header Background Color
+
+grabby hand mouse on carousel images
