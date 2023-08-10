@@ -18,7 +18,7 @@ export async function login({ username, password }) {
 }
 
 export async function getAllAbstracts(token) {
-  const response = await fetch(`${URL}/api/protected`, {
+  const response = await fetch(`${URL}/api/abstracts`, {
     headers: {
       Authorization: `${token}`,
     },
