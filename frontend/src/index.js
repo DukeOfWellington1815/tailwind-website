@@ -27,7 +27,7 @@ const ProtectedHomePage = withAuth(homePage);
 const AppRouter = ({ isLoggedIn }) => (
   <React.StrictMode>
     {isLoggedIn && (
-      <header className="">
+      <header className="sticky top-0 z-50">
         <Header />
       </header>
     )}
