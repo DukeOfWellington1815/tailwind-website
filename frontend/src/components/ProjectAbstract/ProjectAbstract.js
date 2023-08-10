@@ -73,7 +73,15 @@ const ProjectAbstract = () => {
         <p>{error}</p>
       ) : (
         abstracts.map((abstract, index) => (
+
           <div key={index} className="carousel-item">
+
+            <div className='text-7xl font-bold mt-16 mb-4 bright-color uppercase mx-32'> 
+              <h2>{abstract.title}-</h2>
+              <h2 className='mt-4'>placeholder text blabla</h2>
+              <hr></hr>
+            </div>
+            
             <Slider {...slickSettings}>
               {abstract.images && abstract.images.length > 0 ? (
                 abstract.images.map((image, imgIndex) => (
@@ -81,7 +89,7 @@ const ProjectAbstract = () => {
                     <img
                       src={image}
                       alt={abstract.title}
-                      className="h-screen w-full object-cover rounded-md mb-4 mx-auto"
+                      className="h-screen w-full object-cover rounded-md mx-auto"
                     />
                   </div>
                 ))
@@ -91,7 +99,7 @@ const ProjectAbstract = () => {
                     <img
                       src={image}
                       alt="Placeholder"
-                      className="h-screen w-full object-cover rounded-md mb-4 mx-auto"
+                      className="h-screen w-full object-cover rounded-md mx-auto"
                     />
                   </div>
                 ))
