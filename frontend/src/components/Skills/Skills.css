@@ -34,3 +34,45 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.progress-filling {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-filling::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, var(--primary), var(--tetriary));
+  background-size: 400% 400%;
+  animation: gradient-animation 4.5s linear infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+.fade-in-color {
+  animation: color-change 4.5s linear infinite;
+}
+
+@keyframes color-change {
+  0%, 100% {
+    color: var(--primary);
+  }
+  50% {
+    color: var(--tetriary);
+  }
+}
