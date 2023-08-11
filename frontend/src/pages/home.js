@@ -38,11 +38,11 @@ export default function HomePage() {
       </div>
 
       <div className='my-5'>
-        <Skills/>
-      </div>
-
-      <div className='my-5'>
         <ProjectAbstract/>
+      </div>     
+      
+       <div className='my-5'>
+        <Skills/>
       </div>
 
       <div className='my-5'>
