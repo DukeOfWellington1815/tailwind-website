@@ -146,7 +146,7 @@ export default function ProjectAbstract() {
 
               <Slider {...slickSettings}>{(
                   placeholderImages.map((image, imgIndex) => (
-                    <div key={imgIndex} className="relative image-container">
+                    <div key={imgIndex} className="relative image-container hover:cursor-grab active:cursor-grabbing">
                       <img
                         src={image}
                         alt="Placeholder"
