@@ -35,26 +35,26 @@ export default function AboutMe() {
       {/* About Me section */}
       <div
         id="about-me-section"
-        className="flex-2/3 pr-24 max-w-4xl"
+        className="flex-2/3 pr-4 md:pr-24 max-w-4xl"
       >
         <div className="articles">
           {aboutme.articles.map((article, index) => (
             <div
               key={index}
-              className={`mb-10 ${
+              className={`mb-4 md:mb-10 ${
                 visibleIndexes.includes(index) ? 'fade-in' : ''
               } transition-opacity duration-500 ease-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <p className={`text-5xl ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{article}</p>
+              <p className={`text-xl md:text-5xl ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{article}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* Mini CV section */}
-      <div className="flex-1/3 text-xl max-w-xs">
-        <h3 className="mb-4 primary-color">education</h3>
+      <div className="flex-1/3 text-base md:text-xl max-w-xs">
+        <h3 className="mb-2 md:mb-4 primary-color">education</h3>
         <div>
           {minicv.education.map((experience, index) => (
             <div
@@ -69,8 +69,8 @@ export default function AboutMe() {
             </div>
           ))}
         </div>
-        <h3 className='mt-32 mb-4 primary-color'>
-          volounteer work
+        <h3 className='mt-4 md:mt-32 mb-2 md:mb-4 primary-color'>
+          volunteer work
         </h3>
         <div>
           {minicv.vwork.map((experience, index) => (
@@ -86,7 +86,7 @@ export default function AboutMe() {
             </div>
           ))}
         </div>
-        <h3 className='mt-32 mb-4 primary-color'>
+        <h3 className='mt-4 md:mt-32 mb-2 md:mb-4 primary-color'>
           credits
         </h3>
         <div className={`${
