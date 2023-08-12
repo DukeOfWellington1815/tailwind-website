@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import Header from './layouts/Header';
 import Footer from './layouts/Footer';
 import './assets/styles/corporateDesign.css';
-import Aare from './components/Aare/Aare';
-import GameLib from './components/GameLib/GameLib';
-import AareBern from './components/AareBern/AareBern';
 import { BrowserRouter as Router } from 'react-router-dom';
 import projectsPage from './pages/projects';
 import dossierPage from './pages/dossier';
