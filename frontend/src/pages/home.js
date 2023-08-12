@@ -16,7 +16,7 @@ export default function HomePage() {
       const timeout = setTimeout(() => {
         setTypedMessage(typedMessage + welcomeText[currentIndex]);
         setCurrentIndex(currentIndex + 1);
-      }, 100);
+      }, 75); //typing speed
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, typedMessage]);
