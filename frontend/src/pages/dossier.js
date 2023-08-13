@@ -12,6 +12,10 @@ function Dossier() {
   const [isLoading, setIsLoading] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(1.0);
 
+  useEffect(() => {
+    document.title = 'Dossier';
+  }, []);
+
   function handleDownload() {
     const link = document.createElement("a");
     link.href = CV_EN;

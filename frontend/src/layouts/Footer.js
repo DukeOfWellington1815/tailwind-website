@@ -43,8 +43,6 @@ export default function Footer() {
               <br />
               Email: <a href="mailto:lorenzo.florez.fritschi@protonmail.com" className="hover:underline focus:outline-none">lorenzo.florez.fritschi@protonmail.com</a>
               <br />
-              Phone: +41 764411255
-              <br />
               Website: <a href="https://fatmonkee.com" className="hover:underline focus:outline-none">fatmonkee.com</a>
             </p>
             <button onClick={togglePopup}>Close</button>

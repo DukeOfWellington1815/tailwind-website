@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import minicv from '../../assets/texts/minicv.json';
 import aboutme from '../../assets/texts/aboutme.json';
+import logo from '../../assets/images/logo512.png';
 import './AboutMe.css';
 
 export default function AboutMe() {
@@ -41,9 +42,8 @@ export default function AboutMe() {
           {aboutme.articles.map((article, index) => (
             <div
               key={index}
-              className={`mb-4 md:mb-10 ${
-                visibleIndexes.includes(index) ? 'fade-in' : ''
-              } transition-opacity duration-500 ease-in`}
+              className={`mb-4 md:mb-10 ${visibleIndexes.includes(index) ? 'fade-in' : ''
+                } transition-opacity duration-500 ease-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <p className={`text-xl md:text-5xl ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{article}</p>
@@ -51,7 +51,7 @@ export default function AboutMe() {
           ))}
         </div>
       </div>
-  
+
       {/* Mini CV section */}
       <div className="md:w-1/3 text-base md:text-xl max-w-xs mt-4 md:mt-0">
         <h3 className="mb-2 md:mb-4 primary-color">education</h3>
@@ -59,9 +59,8 @@ export default function AboutMe() {
           {minicv.education.map((experience, index) => (
             <div
               key={index}
-              className={`${
-                visibleIndexes.includes(index) ? 'fade-in' : ''
-              } transition-opacity duration-500 ease-in uppercase`}
+              className={`${visibleIndexes.includes(index) ? 'fade-in' : ''
+                } transition-opacity duration-500 ease-in uppercase`}
               style={{ animationDelay: `${(index + aboutme.articles.length) * 0.2}s` }}
             >
               <p className={`mt-4 ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{experience.title}</p>
@@ -76,9 +75,8 @@ export default function AboutMe() {
           {minicv.vwork.map((experience, index) => (
             <div
               key={index}
-              className={`${
-                visibleIndexes.includes(index) ? 'fade-in' : ''
-              } transition-opacity duration-500 ease-in`}
+              className={`${visibleIndexes.includes(index) ? 'fade-in' : ''
+                } transition-opacity duration-500 ease-in`}
               style={{ animationDelay: `${(index + aboutme.articles.length + minicv.education.length) * 0.2}s` }}
             >
               <p className={`${visibleIndexes.includes(index) ? 'visible' : ''}`}>{experience.title}</p>
@@ -89,13 +87,15 @@ export default function AboutMe() {
         <h3 className='mt-4 md:mt-32 mb-2 md:mb-4 primary-color'>
           credits
         </h3>
-        <div className={`${
-          visibleIndexes.includes(0) ? 'fade-in' : ''
-        } transition-opacity duration-500 ease-in ${visibleIndexes.includes(0) ? 'visible' : ''}`}>
+        <div className={`${visibleIndexes.includes(0) ? 'fade-in' : ''
+          } transition-opacity duration-500 ease-in ${visibleIndexes.includes(0) ? 'visible' : ''}`}>
           <p>visual inspiration - <a href={minicv.credits.url} target='_blank' rel='noopener noreferrer'>{minicv.credits.visualInspiration}</a></p>
+          <div className='mt-24 '>
+            <img src={logo} alt='logo' className='rounded-full max-w-[75%]' />
+          </div>
         </div>
       </div>
     </div>
   );
-  
+
 }

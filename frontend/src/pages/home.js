@@ -13,6 +13,11 @@ export default function HomePage() {
   const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
+    document.title = 'FatMonkee - Lorenzo';
+  }, []);
+
+
+  useEffect(() => {
     if (currentIndex < welcomeText.length) {
       const timeout = setTimeout(() => {
         setTypedMessage(typedMessage + welcomeText[currentIndex]);
@@ -33,12 +38,6 @@ export default function HomePage() {
 
       <div className='my-5 bright-color'>
         <AboutMe />
-      </div>
-
-      <div className='flex justify-center w-screen h-screen'>
-        <div className='flex items-center justify-center w-full h-full p-5'>
-          <img src={logo} alt='logo' className='rounded-full max-w-full max-h-full' />
-        </div>
       </div>
 
       <div className='my-5'>

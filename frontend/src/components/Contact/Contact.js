@@ -15,6 +15,10 @@ const Contact = () => {
     }
   }, [state.succeeded]);
 
+  useEffect(() => {
+    document.title = 'Contact me';
+  }, []);
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-full max-w-xl">
