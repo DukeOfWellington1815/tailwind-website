@@ -71,7 +71,7 @@ export default function SkillsPage() {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="flex space-x-64">
+    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-64">
         <div id='skills-section' className="bright-color p-8 rounded shadow-md w-96">
           <h2 className="text-2xl font-bold text-blue-500 mb-4">My Skills</h2>
           <div className="space-y-4">
