@@ -105,14 +105,14 @@ export default function ProjectAbstract() {
   const projectImages = {
     "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],    
     "BadiBuddy": [imagebb1, imagebb2, imagebb3, imagebb4, imagebb5, imagebb6],
-    "PRESIDENTS OF THE WORLD": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
+    "PRESIDENTS OF THE WORLD (2022)": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
     "Saab Classics": [imagesc1, imagesc2, imagesc3, imagesc4, imagesc5],
     "RPS (rock paper scissors)": [imagerps1, imagerps2, imagerps3, imagerps4],
   };
 
   const projectPdf = {
     "BreadCrumb": pdfbc,    
-    "PRESIDENTS OF THE WORLD": pdfpotw, 
+    "PRESIDENTS OF THE WORLD (2022)": pdfpotw, 
     "Saab Classics": pdfsc,
     "RPS (rock paper scissors)": pdfrps,
   };

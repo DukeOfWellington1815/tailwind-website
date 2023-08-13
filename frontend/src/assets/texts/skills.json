@@ -31,13 +31,13 @@
       ]
     },
     {
-      "category": "Other Skills",
+      "category": "Soft Skills",
       "list": [
-        { "name": "Problem Solving", "level": 80 },
+        { "name": "Problem solving", "level": 85 },
         { "name": "Teamwork", "level": 90 },
         { "name": "Communication", "level": 80 },
-        { "name": "Leadership", "level": 80 },
-        { "name": "Attention to Detail", "level": 90 }
+        { "name": "Leadership", "level": 85 },
+        { "name": "Attention to detail", "level": 80 }
       ]
     }
   ]

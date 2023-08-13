@@ -47,7 +47,7 @@
   },
   {
     "id": 3,
-    "title": "PRESIDENTS OF THE WORLD",
+    "title": "PRESIDENTS OF THE WORLD (2022)",
     "slogan": "Exploring Global Leadership",
     "body": "As part of Module 293, I put together a website called Presidents of the World. It's all about showcasing presidents from different countries, like the USA, Russia, and China. The website was implemented using Bootstrap CSS. Throughout the project, I learned how to create responsive websites and use JavaScript and Bootstrap to implement features like a hamburger menu, for instance. Additionally, I delved into legal foundations and learned how to generate an imprint (impressum) to comply with legal requirements.",
     "type": "Educational Website",
