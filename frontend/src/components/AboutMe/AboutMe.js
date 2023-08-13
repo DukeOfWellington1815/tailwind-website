@@ -31,11 +31,11 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="flex flex-col md:flex-row">
       {/* About Me section */}
       <div
         id="about-me-section"
-        className="flex-2/3 pr-4 md:pr-24 max-w-4xl"
+        className="md:w-2/3 pr-4 md:pr-24 max-w-4xl"
       >
         <div className="articles">
           {aboutme.articles.map((article, index) => (
@@ -51,9 +51,9 @@ export default function AboutMe() {
           ))}
         </div>
       </div>
-
+  
       {/* Mini CV section */}
-      <div className="flex-1/3 text-base md:text-xl max-w-xs">
+      <div className="md:w-1/3 text-base md:text-xl max-w-xs mt-4 md:mt-0">
         <h3 className="mb-2 md:mb-4 primary-color">education</h3>
         <div>
           {minicv.education.map((experience, index) => (
@@ -92,9 +92,10 @@ export default function AboutMe() {
         <div className={`${
           visibleIndexes.includes(0) ? 'fade-in' : ''
         } transition-opacity duration-500 ease-in ${visibleIndexes.includes(0) ? 'visible' : ''}`}>
-          <p>visual inspiration - <a href={minicv.credits.url} target='new'> {minicv.credits.visualInspiration}</a></p>
+          <p>visual inspiration - <a href={minicv.credits.url} target='_blank' rel='noopener noreferrer'>{minicv.credits.visualInspiration}</a></p>
         </div>
       </div>
     </div>
   );
+  
 }
