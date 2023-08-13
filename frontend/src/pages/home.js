@@ -7,7 +7,7 @@ import ProjectAbstract from '../components/ProjectAbstract/ProjectAbstract';
 import './home.css';
 
 export default function HomePage() {
-  const welcomeText = "I'm Lorenzo, a young ambitious IT student. Welcome to my website!";
+  const welcomeText = "I am Lorenzo, a young ambitious IT student. Welcome to my website!";
   const [typedMessage, setTypedMessage] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showArrow, setShowArrow] = useState(false);
