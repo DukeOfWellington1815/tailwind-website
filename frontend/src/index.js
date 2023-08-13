@@ -11,29 +11,23 @@ import dossierPage from './pages/dossier';
 import LoginPage from './pages/login';
 import ContactPage from './pages/contact';
 import { Route, Routes } from 'react-router-dom';
-import withAuth from './withAuth';
 import NotFound from './pages/notfound';
-import useSession from './middleware/session'; // Replace 'path/to' with the actual path to useSession.js
-import homePage from './pages/home';
+import HomePage from './pages/home';
+import withAuth from './withAuth'; // Re-import withAuth
 
-const ProtectedProjectsPage = withAuth(projectsPage);
-const ProtectedDossierPage = withAuth(dossierPage);
-const ProtectedHomePage = withAuth(homePage);
+const ProtectedDossierPage = withAuth(dossierPage); // Wrap the dossierPage with withAuth
 
-const AppRouter = ({ isLoggedIn }) => (
+const AppRouter = () => (
   <React.StrictMode>
-    {isLoggedIn && (
-      <header className="sticky top-0 z-50">
-        <Header />
-      </header>
-    )}
+    <header className="sticky top-0 z-50">
+      <Header />
+    </header>
+
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/skills" element={<ContactPage/>} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route path="/" element={<ProtectedHomePage />} />
-      <Route path="/projects" element={<ProtectedProjectsPage />} />
-      <Route path="/dossier" element={<ProtectedDossierPage />} />
+      <Route path="/" element={<HomePage />} />
+      <Route path="/dossier" element={<ProtectedDossierPage />} /> {/* Use ProtectedDossierPage */}
       <Route path="/*" element={<NotFound />} />
     </Routes>
 
@@ -44,22 +38,15 @@ const AppRouter = ({ isLoggedIn }) => (
 );
 
 const AppWrapper = () => {
-  // Get the isLoggedIn value from the useSession hook
-  const { isLoggedIn } = useSession();
-
-  return <AppRouter isLoggedIn={isLoggedIn} />;
+  return <AppRouter />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Wrap the AppWrapper component with the Router component
 root.render(
   <Router>
     <AppWrapper />
   </Router>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log);
