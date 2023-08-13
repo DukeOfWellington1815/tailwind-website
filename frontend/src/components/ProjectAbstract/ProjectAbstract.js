@@ -37,6 +37,11 @@ import imagesc3 from "../../assets/images/sc/image3.png";
 import imagesc4 from "../../assets/images/sc/image4.png";
 import imagesc5 from "../../assets/images/sc/image5.png";
 
+import imagerps1 from "../../assets/images/rps/image1.png";
+import imagerps2 from "../../assets/images/rps/image2.png";
+import imagerps3 from "../../assets/images/rps/image3.png";
+import imagerps4 from "../../assets/images/rps/image4.png";
+
 export default function ProjectAbstract() {
   const [abstracts, setAbstracts] = useState([]);
   const [error, setError] = useState("");
@@ -139,7 +144,7 @@ export default function ProjectAbstract() {
     "BadiBuddy": [imagebb1, imagebb2, imagebb3, imagebb4, imagebb5, imagebb6],
     "PRESIDENTS OF THE WORLD": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
     "Saab Classics": [imagesc1, imagesc2, imagesc3, imagesc4, imagesc5],
-    "RPS (rock paper scissors)": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
+    "RPS (rock paper scissors)": [imagerps1, imagerps2, imagerps3, imagerps4],
 
     // Add more project titles and their image arrays as needed
   };
