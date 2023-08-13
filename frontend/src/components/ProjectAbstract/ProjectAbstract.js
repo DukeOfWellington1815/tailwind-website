@@ -5,9 +5,15 @@ import 'slick-carousel/slick/slick-theme.css';
 import useSession from '../../middleware/session';
 import { getAllAbstracts } from '../../middleware/apiLogin';
 import placeholder from '../../assets/images/placeholder.png';
+import logo1 from '../../assets/images/logo192.png';
+import logo2 from '../../assets/images/logo512.png';
 import "./ProjectAbstract.css";
 import "../../assets/styles/corporateDesign.css";
-import projectData from "../../assets/texts/projectData.json"
+import projectData from "../../assets/texts/projectData.json";
+import imagebc1 from "../../assets/images/bc/image1.jpg";
+import imagebc2 from "../../assets/images/bc/image2.jpg";
+import imagebc3 from "../../assets/images/bc/image3.jpg";
+import imagebc4 from "../../assets/images/bc/image4.png";
 
 export default function ProjectAbstract() {
   const [abstracts, setAbstracts] = useState([]);
@@ -23,12 +29,12 @@ export default function ProjectAbstract() {
 
   useEffect(() => {
     document.title = 'Projects';
-  
+
     if (token) {
       const loadAbstracts = async () => {
         try {
           const data = await getAllAbstracts(token);
-  
+
           if (data.length === 0) {
             setAbstracts(projectData); // Use local data if API response is empty
           } else {
@@ -37,7 +43,7 @@ export default function ProjectAbstract() {
               imagepaths: JSON.parse(item.imagepaths),
               collaborators: JSON.parse(item.collaborators)
             }));
-  
+
             setAbstracts(parsedData);
           }
           setLoading(false);
@@ -52,7 +58,6 @@ export default function ProjectAbstract() {
       setLoading(false);
     }
   }, [token]);
-  
 
   const placeholderImages = [placeholder, placeholder, placeholder, placeholder, placeholder];
 
@@ -107,6 +112,14 @@ export default function ProjectAbstract() {
     };
   }, [abstracts]);
 
+  const projectImages = {
+    "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],
+    "PRESIDENTS OF THE WORLD": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
+    "BadiBuddy": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
+
+    // Add more project titles and their image arrays as needed
+  };
+
   return (
     <div className="carousel-container">
       {loading ? (
@@ -116,7 +129,8 @@ export default function ProjectAbstract() {
       ) : (
         abstracts.map((abstract, index) => {
           const isVisible = visibleIndexes.includes(index);
-  
+          const imagesForProject = projectImages[abstract.title] || placeholderImages;
+
           return (
             <div
               key={index}
@@ -127,69 +141,44 @@ export default function ProjectAbstract() {
                 <h2>{abstract.title}– <br />{abstract.slogan}</h2>
                 <hr />
               </div>
-      
-              {/* <Slider {...slickSettings}>
-                {abstract.imagepaths && abstract.imagepaths.length > 0 ? (
-                  abstract.imagepaths.map((image, imgIndex) => (
-                    <div key={imgIndex} className="relative image-container">
-                      <img
-                        src={image}
-                        alt={abstract.title}
-                        className={`h-screen w-full object-cover rounded-md mx-auto content ${isVisible ? ' visible' : ''}`}
-                      />
-                    </div>
-                  ))
-                ) : (
-                  placeholderImages.map((image, imgIndex) => (
-                    <div key={imgIndex} className="relative image-container">
-                      <img
-                        src={image}
-                        alt="Placeholder"
-                        className={`h-screen w-full object-cover rounded-md mx-auto content ${isVisible ? 'visible' : ''}`}
-                      />
-                    </div>
-                  ))
-                )}
-              </Slider> */}
 
-              <Slider {...slickSettings}>{(
-                  placeholderImages.map((image, imgIndex) => (
-                    <div key={imgIndex} className="relative image-container hover:cursor-grab active:cursor-grabbing">
-                      <img
-                        src={image}
-                        alt="Placeholder"
-                        className={`h-screen w-full object-cover rounded-md mx-auto content ${isVisible ? 'visible' : ''}`}
-                      />
-                    </div>
-                  ))
-                )}
-              </Slider>
-      
-              <div className={`flex flex-col items-center mt-10 content ${isVisible ? 'visible' : ''}`}>
-                <div className="flex flex-row">
-                  <div className="flex-1/3 text-xl max-w-md pr-24">
-                  <div className="flex flex-col">
-                    <div className="w-full">
-                      <table className="table bright-color text-2xl">
-                        <tbody>
-                          <tr>
-                            <td className="pr-2">Year:</td>
-                            <td className="tetriary-color">{abstract.year}</td>
-                          </tr>
-                          <tr>
-                            <td className="pr-2">Type:</td>
-                            <td className="primary-color">{abstract.type}</td>
-                          </tr>
-                          <tr>
-                            <td className="pr-2">Role:</td>
-                            <td className="secondary-color">{abstract.own_role}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      </div>
-                      </div>
+              <Slider {...slickSettings}>
+                {imagesForProject.map((image, imgIndex) => (
+                  <div key={imgIndex} className="relative image-container">
+                    <img
+                      src={image}
+                      alt={abstract.title}
+                      className={`h-screen w-full object-contain rounded-md mx-auto content ${isVisible ? ' visible' : ''}`}
+                    />
                   </div>
-                  <div className="flex-2/3 max-w-2xl ml-60">
+                ))}
+              </Slider>
+
+              <div className={`flex flex-col items-center mx-64 mt-10 content ${isVisible ? 'visible' : ''}`}>
+                <div className="flex flex-row">
+                  <div className="flex-1/3 text-xl max-w-md">
+                    <div className="flex flex-col">
+                      <div className="w-full">
+                        <table className="table bright-color text-2xl">
+                          <tbody>
+                            <tr className="flex">
+                              <td className="pr-2">Year:</td>
+                              <td className="tetriary-color">{abstract.year}</td>
+                            </tr>
+                            <tr className="flex">
+                              <td className="pr-2">Type:</td>
+                              <td className="primary-color">{abstract.type}</td>
+                            </tr>
+                            <tr className="flex">
+                              <td className="pr-2">Role:</td>
+                              <td className="secondary-color">{abstract.own_role}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-2/3 max-w-4xl ml-60">
                     <p className={`bright-color text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
                     <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
                       <a href={`/abstract/${abstract.id}`} className={`dark-color bg-primary-color px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}>
@@ -199,18 +188,23 @@ export default function ProjectAbstract() {
                     <div className={`mt-10 ${isVisible ? 'fade-in visible' : ''}`}>
                       <p className={`bright-color text-md ${isVisible ? 'fade-in visible' : ''}`}>
                         {abstract.collaborators &&
-                          abstract.collaborators.map((collaborator, collaboratorIndex) => (
+                          abstract.collaborators.map((roleWithPeople, collaboratorIndex) => (
                             <span key={collaboratorIndex}>
-                              <span className="text-gray-500 uppercase">{collaborator.role}</span>{" "}
-                              <a
-                                href={collaborator.website_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="uppercase"
-                              >
-                                {collaborator.name}
-                              </a>
-                              {collaboratorIndex !== abstract.collaborators.length - 1 && ", "}
+                              <span className="text-gray-500 uppercase font-semibold">{roleWithPeople.role}:</span>{" "}
+                              {roleWithPeople.people.map((collaborator, personIndex) => (
+                                <React.Fragment key={personIndex}>
+                                  <a
+                                    href={collaborator.website_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="uppercase"
+                                  >
+                                    {collaborator.name}
+                                  </a>
+                                  {personIndex !== roleWithPeople.people.length - 1 && ", "}
+                                </React.Fragment>
+                              ))}
+                              {collaboratorIndex !== abstract.collaborators.length - 1 && " "}
                             </span>
                           ))}
                       </p>
@@ -224,4 +218,5 @@ export default function ProjectAbstract() {
       )}
     </div>
   );
+
 }
