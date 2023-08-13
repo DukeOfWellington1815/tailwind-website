@@ -49,13 +49,13 @@ export default function ProjectAbstract() {
   const [visibleIndexes, setVisibleIndexes] = useState([]);
 
   useEffect(() => {
-    document.title = 'Projects';
+    document.title = 'FatMonkee';
   }, []);
 
   const { token } = useSession();
 
   useEffect(() => {
-    document.title = 'Projects';
+    document.title = 'FatMonkee';
 
     if (token) {
       const loadAbstracts = async () => {
@@ -99,7 +99,7 @@ export default function ProjectAbstract() {
     nextArrow: null,
     prevArrow: null,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     beforeChange: (currentSlide, nextSlide) => {
       const slider = document.querySelector(".slick-slider");
       slider.querySelectorAll(".slick-slide").forEach((slide, index) => {
@@ -188,18 +188,18 @@ export default function ProjectAbstract() {
                   <div className="flex-1/3 text-xl max-w-md">
                     <div className="flex flex-col">
                       <div className="w-full">
-                        <table className="table bright-color text-2xl">
+                        <table className="table bright-color text-2xl uppercase">
                           <tbody>
                             <tr className="flex">
-                              <td className="pr-2">Year:</td>
+                              <td className="pr-2">Year</td>
                               <td className="tetriary-color">{abstract.year}</td>
                             </tr>
                             <tr className="flex">
-                              <td className="pr-2">Type:</td>
+                              <td className="pr-2">Type</td>
                               <td className="primary-color">{abstract.type}</td>
                             </tr>
                             <tr className="flex">
-                              <td className="pr-2">Role:</td>
+                              <td className="pr-2">Role</td>
                               <td className="secondary-color">{abstract.own_role}</td>
                             </tr>
                           </tbody>
