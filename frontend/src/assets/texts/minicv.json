@@ -2,19 +2,15 @@
     "education": [
       {
         "title": "BWD Bern",
-        "year": "2021-2024"
+        "year": "2021-2024 – 3 Years"
       },
       {
         "title": "gibb Bern",
-        "year": "2021-2024"
-      },
-      {
-        "title": "BBC",
-        "year": "2021-2023"
+        "year": "2021-2024 – 3 Years"
       },
       {
         "title": "OSZ Ittigen",
-        "year": "2018-2021"
+        "year": "2018-2021 – 3 Years"
       }
     ],
     "vwork": [
@@ -23,20 +19,14 @@
         "year": "2023"
       },
       {
-        "title": "IMS",
-        "year": "2022"
-      },
-      {
-        "title": "IMS Infoabend",
-        "year": "2023"
-      },
-      {
-        "title": "IMS TdoT",
+        "title": "IMS Tag der offenen Tür",
         "year": "2022"
       }
     ],
     "credits": {
-      "visualInspiration": "Thieb.co"
+      "visualInspiration": "thieb.co",
+      "url": "https://www.thieb.co"
+
     }
   }
   
