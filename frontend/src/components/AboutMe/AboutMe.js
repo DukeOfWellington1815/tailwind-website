@@ -61,10 +61,10 @@ export default function AboutMe() {
               key={index}
               className={`${
                 visibleIndexes.includes(index) ? 'fade-in' : ''
-              } transition-opacity duration-500 ease-in`}
+              } transition-opacity duration-500 ease-in uppercase`}
               style={{ animationDelay: `${(index + aboutme.articles.length) * 0.2}s` }}
             >
-              <p className={`${visibleIndexes.includes(index) ? 'visible' : ''}`}>{experience.title}</p>
+              <p className={`mt-4 ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{experience.title}</p>
               <span className={`${visibleIndexes.includes(index) ? 'visible' : ''}`}>{experience.year}</span>
             </div>
           ))}
@@ -92,7 +92,7 @@ export default function AboutMe() {
         <div className={`${
           visibleIndexes.includes(0) ? 'fade-in' : ''
         } transition-opacity duration-500 ease-in ${visibleIndexes.includes(0) ? 'visible' : ''}`}>
-          <p>Visual Inspiration - {minicv.credits.visualInspiration}</p>
+          <p>visual inspiration - <a href={minicv.credits.url} target='new'> {minicv.credits.visualInspiration}</a></p>
         </div>
       </div>
     </div>
