@@ -25,7 +25,7 @@ export default function HomePage() {
   }, [currentIndex, typedMessage]);
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center overflow-hidden'>
       <div className='welcome-section text-7xl font-bold mt-5 bright-color max-w-7xl'>
         {typedMessage}
         {showArrow && <div className={`bright-color text-4xl mt-32 animate-bounce`}>&#8595;</div>}
