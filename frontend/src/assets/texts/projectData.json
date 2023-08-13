@@ -1,21 +1,101 @@
 [
-    {
-      "id": 1,
-      "title": "PRESIDENTS OF THE WORLD",
-      "slogan": "Lorem ipsum dolor",
-      "body": "Im Rahmen des Moduls 293 habe ich eine Webseite entwickelt...",
-      "type": "Website",
-      "own_role": "Developer",
-      "year": 2022,
-      "imagepaths": [
-        "../../assets/images/placeholder.png",
-        "../../assets/images/logo192.png",
-        "../../assets/images/placeholder.png",
-        "../../assets/images/logo512.png"
-      ],      
-      "collaborators": [
-        { "name": "Collaborator 1", "role": "Designer" },
-        { "name": "Collaborator 2", "role": "Developer" }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "title": "BreadCrumb",
+    "slogan": "Revolutionizing Restaurant Management",
+    "body": "During a week of hands-on learning at the vocational school (gibb), we came up with BreadCrumb, a useful app for restaurants. The goal? To make ordering and paying quicker and easier, so customers can say goodbye to waiting around. Using their phones, customers can order seamlessly, minimizing mistakes and delays. It's a great fit for cafeterias and canteens, and the endorsement of an industry expert lends credence to the project's practicality. In the next semester, we'll keep refining BreadCrumb as part of our computer science module. We're excited about where it's headed.",
+    "type": "Website, Management System",
+    "own_role": "Developer, Planning",
+    "year": 2023,
+    "collaborators": [
+      { "role": "Frontend Dev", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "T.Dürr", "website_url": "https://tcraft.ch" }
+      ]},
+      { "role": "Planning", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" }
+      ]},
+      { "role": "Team Lead", "people": [
+        { "name": "T.Dürr", "website_url": "https://tcraft.ch" }
+      ]},
+      { "role": "Backend Dev", "people": [
+        { "name": "O.Lochner", "website_url": "https://fatmonkee.com" }
+      ]},
+      { "role": "Design", "people": [
+        { "name": "G.Greco", "website_url": "https://fatmonkee.com" }
+      ]}
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BadiBuddy",
+    "slogan": "Your Weather Companion",
+    "body": "Introducing BadiBuddy, the latest Android app to make your swimming adventures even better. With its user-friendly interface, BadiBuddy keeps you informed about weather conditions and water temperatures. Developed by a team that includes L. Flórez and T. Dürr, this app is designed to provide you with quick access to the information you need for a great day at the Aare. Whether you're planning a swim or just curious about the conditions, BadiBuddy has got you covered. Dive in and make the most of your aquatic experiences with BadiBuddy.",
+    "type": "Android Application",
+    "own_role": "Developer, Design",
+    "year": 2023,
+    "collaborators": [
+      { "role": "Developer", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "T.Dürr", "website_url": "https://tcraft.ch" }
+      ]},
+      { "role": "Design", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "T.Dürr", "website_url": "https://tcraft.ch" }
+      ]}
+    ]
+  },
+  {
+    "id": 3,
+    "title": "PRESIDENTS OF THE WORLD",
+    "slogan": "Exploring Global Leadership",
+    "body": "As part of Module 293, I put together a website called Presidents of the World. It's all about showcasing presidents from different countries, like the USA, Russia, and China. The website was implemented using Bootstrap CSS. Throughout the project, I learned how to create responsive websites and use JavaScript and Bootstrap to implement features like a hamburger menu, for instance. Additionally, I delved into legal foundations and learned how to generate an imprint (impressum) to comply with legal requirements.",
+    "type": "Educational Website",
+    "own_role": "Developer",
+    "year": 2022,
+    "collaborators": [
+      { "role": "Developer", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" }
+      ]}
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Saab Classics",
+    "slogan": "Vintage Vehicle Enthusiasts, This is for You",
+    "body": "Under the imaginative directive of Saab AB, the initiative 'Saab Classics' materialized, aiming to craft an alluring and user-centric interface for a platform dedicated to the exhibition of vintage Airplanes. The frontend took form through the thoughtful integration of .NET MAUI and Adobe XD. While a captivating visual mockup and prototype came to fruition, the realm of functionality and logic remained untouched. The 'Saab Classics' undertaking stood as a vivid exemplar, elucidating the process of architecting a marketplace for historic vehicles, while abstaining from the construction of tangible backend or server elements.",
+    "type": "Prototype, Mockup",
+    "own_role": "Design",
+    "year": 2022,
+    "collaborators": [
+      { "role": "Design", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" }
+      ]}
+    ]
+  },
+  {
+    "id": 5,
+    "title": "RPS (rock paper scissors)",
+    "slogan": "Journey into Agile Methodology",
+    "body": "As part of Module 426, we developed the project 'RPS (Rock Paper Scissors)' to gain practical experience in applying agile methods, particularly Scrum, in software development. We worked in sprints, created user stories, and held regular meetings to discuss progress. The project provided us with the opportunity to experience the benefits and challenges of agile software development and see the principles of Scrum in action. Git and the Git workflow played a crucial role in managing our codebase and supporting collaboration. Using Git allowed us to collaborate efficiently and make changes traceable. Overall, we expanded our knowledge and skills in agile methods and are confident that these experiences will continue to benefit us in our future careers as software developers.",
+    "type": "Scrum Project",
+    "own_role": "Developer, Product Owner",
+    "year": 2023,
+    "collaborators": [      
+      { "role": "Developer", "people": [
+        { "name": "L.Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "D.Staudenmann" },
+        { "name": "D.Ribeiro", "website_url": "http://youtube.com/" }
+      ]},
+      { "role": "Product Owner", "people": [
+        { "name": "L.Flórez"}
+      ]},
+      { "role": "Scrum Master", "people": [
+        { "name": "D.Staudenmann"}
+      ]},
+      { "role": "Design", "people": [
+        { "name": "D.Ribeiro", "website_url": "http://youtube.com/" }
+      ]}
+    ]
+  }
+]
