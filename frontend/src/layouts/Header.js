@@ -147,7 +147,7 @@ export default function Header() {
         )}
 
         {screenWidth < 768 && (
-          <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+          <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-black shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
             {[
               ['Home', '/', <AiFillHome />],
               ['Dossier', '/dossier', <AiFillFolderOpen />],
@@ -156,22 +156,22 @@ export default function Header() {
               <Link
                 key={index}
                 to={url}
-                className="font-display max-w-sm text-xl font-bold dark-color leading-tight block text-center"
+                className="font-display max-w-sm text-xl font-bold bright-color leading-tight block text-center"
                 onClick={() => setIsOpen(false)}
               >
                 <div className="flex items-center">
                   {icon}
-                  <span className="ml-4 text-dark text-4xl link link-underline link-underline-black">
+                  <span className="ml-4 bright-color text-4xl link link-underline link-underline-black">
                     {title}
                   </span>
                 </div>
               </Link>
             ))}
-            <div className="flex justify-center items-end fixed bottom-0 left-0 right-0 mb-2 space-x-4">
-              <a href="https://youtube.com" target="new" className="large-icon dark-color">
+            <div className="flex justify-center items-end fixed bottom-0 left-0 right-0 space-x-4">
+              <a href="https://youtube.com" target="new" className="large-icon bright-color">
                 <AiFillGithub />
               </a>
-              <a href="https://youtube.com" target="new" className="large-icon dark-color">
+              <a href="https://youtube.com" target="new" className="large-icon bright-color">
                 <AiFillLinkedin />
               </a>
             </div>
