@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import useSession from '../../middleware/session';
-import { getAllAbstracts } from '../../middleware/apiLogin';
 import placeholder from '../../assets/images/placeholder.png';
-import logo1 from '../../assets/images/logo192.png';
-import logo2 from '../../assets/images/logo512.png';
 import "./ProjectAbstract.css";
 import "../../assets/styles/corporateDesign.css";
 
@@ -41,6 +37,11 @@ import imagerps1 from "../../assets/images/rps/image1.png";
 import imagerps2 from "../../assets/images/rps/image2.png";
 import imagerps3 from "../../assets/images/rps/image3.png";
 import imagerps4 from "../../assets/images/rps/image4.png";
+
+import pdfbc from "../../assets/docs/BreadCrumb.pdf"
+import pdfpotw from "../../assets/docs/Presidents of the World.pdf"
+import pdfsc from "../../assets/docs/Saab Classics.pdf"
+import pdfrps from "../../assets/docs/RPS.pdf"
 
 export default function ProjectAbstract() {
   const [abstracts, setAbstracts] = useState(projectData); // Use local data
@@ -107,8 +108,13 @@ export default function ProjectAbstract() {
     "PRESIDENTS OF THE WORLD": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
     "Saab Classics": [imagesc1, imagesc2, imagesc3, imagesc4, imagesc5],
     "RPS (rock paper scissors)": [imagerps1, imagerps2, imagerps3, imagerps4],
+  };
 
-    // Add more project titles and their image arrays as needed
+  const projectPdf = {
+    "BreadCrumb": pdfbc,    
+    "PRESIDENTS OF THE WORLD": pdfpotw, 
+    "Saab Classics": pdfsc,
+    "RPS (rock paper scissors)": pdfrps,
   };
 
   return (
@@ -121,6 +127,7 @@ export default function ProjectAbstract() {
     abstracts.map((abstract, index) => {
       const isVisible = visibleIndexes.includes(index);
       const imagesForProject = projectImages[abstract.title] || placeholderImages;
+      const pdfForProject = projectPdf[abstract.title];
 
       return (
         <div
@@ -172,10 +179,17 @@ export default function ProjectAbstract() {
               <div className="md:flex-2/3 max-w-full md:max-w-4xl md:ml-16">
                 <p className={`bright-color text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
                 <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
-                  <a href={`/abstract/${abstract.id}`} className={`dark-color bg-primary-color px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}>
-                    Read More
-                  </a>
-                </div>
+              {pdfForProject && (
+                <a
+                  href={pdfForProject}
+                  target="new"
+                  className={`secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                >
+                  Read More
+                </a>
+              )}
+            </div>
+
                 <div className={`mt-10 ${isVisible ? 'fade-in visible' : ''}`}>
                   <p className={`bright-color text-md ${isVisible ? 'fade-in visible' : ''}`}>
                     {abstract.collaborators &&
