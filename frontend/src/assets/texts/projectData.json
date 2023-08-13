@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "PRESIDENTS OF THE WORLD",
+      "slogan": "Lorem ipsum dolor",
+      "body": "Im Rahmen des Moduls 293 habe ich eine Webseite entwickelt...",
+      "type": "Website",
+      "own_role": "Developer",
+      "year": 2022,
+      "imagepaths": [
+        "'../../assets/images/placeholder.png'",
+        "'../../assets/images/placeholder.png'",
+        "../../assets/images/placeholder.png",
+        "../../assets/images/placeholder.png"
+      ],
+      "collaborators": [
+        { "name": "Collaborator 1", "role": "Designer" },
+        { "name": "Collaborator 2", "role": "Developer" }
+      ]
+    }
+  ]
