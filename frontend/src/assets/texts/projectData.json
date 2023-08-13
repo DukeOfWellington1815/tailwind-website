@@ -8,11 +8,11 @@
       "own_role": "Developer",
       "year": 2022,
       "imagepaths": [
-        "'../../assets/images/placeholder.png'",
-        "'../../assets/images/placeholder.png'",
         "../../assets/images/placeholder.png",
-        "../../assets/images/placeholder.png"
-      ],
+        "../../assets/images/logo192.png",
+        "../../assets/images/placeholder.png",
+        "../../assets/images/logo512.png"
+      ],      
       "collaborators": [
         { "name": "Collaborator 1", "role": "Designer" },
         { "name": "Collaborator 2", "role": "Developer" }

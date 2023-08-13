@@ -7,6 +7,7 @@ import { getAllAbstracts } from '../../middleware/apiLogin';
 import placeholder from '../../assets/images/placeholder.png';
 import "./ProjectAbstract.css";
 import "../../assets/styles/corporateDesign.css";
+import projectData from "../../assets/texts/projectData.json"
 
 export default function ProjectAbstract() {
   const [abstracts, setAbstracts] = useState([]);
@@ -21,30 +22,37 @@ export default function ProjectAbstract() {
   const { token } = useSession();
 
   useEffect(() => {
-    const loadAbstracts = async () => {
-      if (!token) {
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const data = await getAllAbstracts(token);
-
-        const parsedData = data.map(item => ({
-          ...item,
-          imagepaths: JSON.parse(item.imagepaths),
-          collaborators: JSON.parse(item.collaborators)
-        }));
-
-        setAbstracts(parsedData);
-        setLoading(false);
-      } catch (error) {
-        setError("Failed to fetch abstracts. Please try again later.");
-        setLoading(false);
-      }
-    };
-    loadAbstracts();
+    document.title = 'Projects';
+  
+    if (token) {
+      const loadAbstracts = async () => {
+        try {
+          const data = await getAllAbstracts(token);
+  
+          if (data.length === 0) {
+            setAbstracts(projectData); // Use local data if API response is empty
+          } else {
+            const parsedData = data.map(item => ({
+              ...item,
+              imagepaths: JSON.parse(item.imagepaths),
+              collaborators: JSON.parse(item.collaborators)
+            }));
+  
+            setAbstracts(parsedData);
+          }
+          setLoading(false);
+        } catch (error) {
+          setError("Failed to fetch abstracts. Please try again later.");
+          setLoading(false);
+        }
+      };
+      loadAbstracts();
+    } else {
+      setAbstracts(projectData); // Use local data if no token
+      setLoading(false);
+    }
   }, [token]);
+  
 
   const placeholderImages = [placeholder, placeholder, placeholder, placeholder, placeholder];
 
