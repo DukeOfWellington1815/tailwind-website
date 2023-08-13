@@ -93,7 +93,7 @@ export default function Header() {
           <img src={logo} ref={logoRef} className="App-logo monkeylogo absolute left-0 top-0" alt="logo" />
         </Link>
 
-        <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
+        <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="bright-color absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
           </svg>
@@ -150,9 +150,7 @@ export default function Header() {
           <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-bright-color shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
             {[
               ['Home', '/', <AiFillHome />],
-              ['Skills', '/skills', <AiFillCode />],
               ['Dossier', '/dossier', <AiFillFolderOpen />],
-              ['Projects', '/projects', <AiFillCode />],
               ['Contact', '/contact', <AiFillMail />],
             ].map(([title, url, icon], index) => (
               <Link
@@ -182,9 +180,7 @@ export default function Header() {
 
         <div className="hidden md:flex space-x-16">
           {[
-            ['Skills', '/skills'],
             ['Dossier', '/dossier'],
-            ['Projects', '/projects'],
             ['Contact', '/contact'],
           ].map(([title, url], index) => (
             <Link key={index} to={url} className="font-display max-w-sm text-2xl font-bold leading-tight">
@@ -199,7 +195,7 @@ export default function Header() {
         {showLogoutPopup && (
           <div className="fixed top-0 left-0 w-screen h-screen bg-opacity-80 bg-black flex justify-center items-center">
             <div className="bg-white p-4 rounded shadow">
-              <p className="bright-color text-xl font-semibold">Are you sure you want to logout?</p>
+              <p className="text-xl font-semibold">Are you sure you want to logout?</p>
               <div className="flex justify-end mt-4">
                 <button
                   className="px-4 py-2 mr-2 bg-gray-200 rounded"
