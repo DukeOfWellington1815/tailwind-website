@@ -171,7 +171,7 @@ export default function Header() {
               <a href="https://github.com/DukeOfWellington1815" target="new" className="large-icon bright-color">
                 <AiFillGithub />
               </a>
-              <a href="https://in.com/in/lorenzo-florez-fritschi/" target="new" className="large-icon bright-color">
+              <a href="https://www.linkedin.com/in/lorenzo-florez-fritschi/" target="new" className="large-icon bright-color">
                 <AiFillLinkedin />
               </a>
             </div>
