@@ -9,11 +9,11 @@
     "year": 2023,
     "collaborators": [
       { "role": "Frontend Dev", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
         { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
       ]},
       { "role": "Planning", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" }
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
       ]},
       { "role": "Team Lead", "people": [
         { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
@@ -36,11 +36,11 @@
     "year": 2023,
     "collaborators": [
       { "role": "Developer", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
         { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
       ]},
       { "role": "Design", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
         { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
       ]}
     ]
@@ -55,7 +55,7 @@
     "year": 2022,
     "collaborators": [
       { "role": "Developer", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" }
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
       ]}
     ]
   },
@@ -69,7 +69,7 @@
     "year": 2022,
     "collaborators": [
       { "role": "Design", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" }
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
       ]}
     ]
   },
@@ -83,12 +83,12 @@
     "year": 2023,
     "collaborators": [      
       { "role": "Developer", "people": [
-        { "name": "L. Flórez", "website_url": "https://fatmonkee.com" },
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
         { "name": "D. Staudenmann" },
         { "name": "D. Ribeiro", "website_url": "http://youtube.com/" }
       ]},
       { "role": "Product Owner", "people": [
-        { "name": "L. Flórez"}
+        { "name": "L. Flórez Fritschi"}
       ]},
       { "role": "Scrum Master", "people": [
         { "name": "D. Staudenmann"}
