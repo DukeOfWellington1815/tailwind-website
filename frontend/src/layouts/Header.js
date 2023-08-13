@@ -86,7 +86,7 @@ export default function Header() {
   };
 
   return (
-    <nav className=" shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: '-20px 0px 15px -3px rgba(0,0,0,0.1)' }}>
+    <nav className="bg-black shadow border-0 p-4 flex sm:justify-center h-16 min-h-full" style={{ boxShadow: '-20px 0px 15px -3px rgba(0,0,0,0.1)' }}>
       <div className="w-full h-full flex justify-center items-center relative">
 
         <Link to="/">
