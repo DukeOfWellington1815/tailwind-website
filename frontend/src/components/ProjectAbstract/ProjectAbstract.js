@@ -9,11 +9,33 @@ import logo1 from '../../assets/images/logo192.png';
 import logo2 from '../../assets/images/logo512.png';
 import "./ProjectAbstract.css";
 import "../../assets/styles/corporateDesign.css";
+
 import projectData from "../../assets/texts/projectData.json";
+
 import imagebc1 from "../../assets/images/bc/image1.jpg";
 import imagebc2 from "../../assets/images/bc/image2.jpg";
 import imagebc3 from "../../assets/images/bc/image3.jpg";
 import imagebc4 from "../../assets/images/bc/image4.png";
+
+import imagebb1 from "../../assets/images/bb/image1.jpg";
+import imagebb2 from "../../assets/images/bb/image2.jpg";
+import imagebb3 from "../../assets/images/bb/image3.jpg";
+import imagebb4 from "../../assets/images/bb/image4.jpg";
+import imagebb5 from "../../assets/images/bb/image5.jpg";
+import imagebb6 from "../../assets/images/bb/image6.jpg";
+
+import imagepotw1 from "../../assets/images/potw/image1.png";
+import imagepotw2 from "../../assets/images/potw/image2.png";
+import imagepotw3 from "../../assets/images/potw/image3.png";
+import imagepotw4 from "../../assets/images/potw/image4.png";
+import imagepotw5 from "../../assets/images/potw/image5.png";
+import imagepotw6 from "../../assets/images/potw/image6.png";
+
+import imagesc1 from "../../assets/images/sc/image1.png";
+import imagesc2 from "../../assets/images/sc/image2.png";
+import imagesc3 from "../../assets/images/sc/image3.png";
+import imagesc4 from "../../assets/images/sc/image4.png";
+import imagesc5 from "../../assets/images/sc/image5.png";
 
 export default function ProjectAbstract() {
   const [abstracts, setAbstracts] = useState([]);
@@ -113,9 +135,11 @@ export default function ProjectAbstract() {
   }, [abstracts]);
 
   const projectImages = {
-    "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],
-    "PRESIDENTS OF THE WORLD": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
-    "BadiBuddy": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
+    "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],    
+    "BadiBuddy": [imagebb1, imagebb2, imagebb3, imagebb4, imagebb5, imagebb6],
+    "PRESIDENTS OF THE WORLD": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
+    "Saab Classics": [imagesc1, imagesc2, imagesc3, imagesc4, imagesc5],
+    "RPS (rock paper scissors)": [logo1, placeholder, placeholder, logo2, logo1, placeholder],
 
     // Add more project titles and their image arrays as needed
   };
