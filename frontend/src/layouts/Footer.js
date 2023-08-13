@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import './Footer.css';
+import {
+  AiFillGithub,
+  AiFillLinkedin,
+} from 'react-icons/ai';
 
 export default function Footer() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -10,8 +14,16 @@ export default function Footer() {
 
   return (
     <footer className="footer-container">
-      <div className="footer-content">
+      <div className="footer-content ">
         <span>&copy; {new Date().getFullYear()} Lorenzo Flórez Fritschi</span>
+        <div className="flex justify-center items-end left-0 right-0 space-x-4">
+              <a href="https://github.com/DukeOfWellington1815" target="new" className="large-icon bright-color">
+                <AiFillGithub />
+              </a>
+              <a href="https://in.com/in/lorenzo-florez-fritschi/" target="new" className="large-icon bright-color">
+                <AiFillLinkedin />
+              </a>
+            </div>
         <div className="links">
           <button onClick={togglePopup} className="mr-4 hover:underline focus:outline-none">
             Imprint

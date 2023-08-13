@@ -32,8 +32,8 @@ export default function SkillsPage() {
         const gradesTop = gradesSection.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         const currentIndex = Math.min(
-          Math.floor((windowHeight * 1.2 - gradesTop) / 100),
-          grades.length - 1
+          Math.floor((windowHeight * 0.75 - gradesTop) / 100),
+          grades.category["Core Area"].length - 1
         );
 
         const newIndexes = Array.from({ length: currentIndex + 1 }, (_, index) => index);
@@ -70,67 +70,94 @@ export default function SkillsPage() {
   };
 
   return (
-    <div className="flex items-center justify-center">
-    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-64">
-        <div id='skills-section' className="bright-color p-8 rounded shadow-md w-96">
-          <h2 className="text-2xl font-bold text-blue-500 mb-4">My Skills</h2>
-          <div className="space-y-4">
-            {skills.map((skillCategory, index) => (
-              <div key={skillCategory.category}>
-                <h3 className="text-lg font-semibold mb-2">{skillCategory.category}</h3>
-                <ul className="space-y-2">
-                  {skillCategory.list.map((skill, skillIndex) => (
-                    <li
-                      key={skill.name}
-                      className={`${visibleSkillIndexes.includes(skillIndex) ? 'fade-in' : 'hidden'
-                        } transition-opacity duration-500 ease-in`}
-                      style={{ animationDelay: `${skillIndex * 0.2}s` }}
-                    >
+    <div className="flex flex-col items-center justify-center">
+      <h2 className="md:text-5xl text-xl font-bold bright-color mb-4 uppercase">Academic Progress and Proficiency</h2>
+      <div className="flex items-center justify-center">
+
+        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-64">
+          <div id='skills-section' className="bright-color p-8 rounded shadow-md w-96">
+            <h2 className="text-2xl font-bold text-blue-500 mb-4">Skills</h2>
+            <div className="space-y-8">
+              {skills.map((skillCategory, index) => (
+                <div key={skillCategory.category}>
+                  <h3 className="text-lg font-semibold mb-2 uppercase">{skillCategory.category}</h3>
+                  <ul className="space-y-2">
+                    {skillCategory.list.map((skill, skillIndex) => (
+                      <li
+                        key={skill.name}
+                        className={`${visibleSkillIndexes.includes(skillIndex) ? 'fade-in' : 'hidden'
+                          } transition-opacity duration-500 ease-in`}
+                        style={{ animationDelay: `${skillIndex * 0.2}s` }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{skill.name}</span>
+                          <div className="flex items-center space-x-2">
+                            <div className="h-2 w-32 bg-gray-800 rounded-full">
+                              <div
+                                className="h-2 bg-blue-500   rounded-full"
+                                style={{ width: `${skill.level}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Grades Section */}
+          <div id='grades-section' className="bright-color p-8 rounded shadow-md w-96">
+            <h2 className="text-2xl font-bold mb-4 fade-in-color">Grades</h2>
+            <ul className="space-y-8">
+              {Object.keys(grades.category).map((categoryKey) => (
+                <div key={categoryKey} className='space-y-2'>
+                  <h3 className="text-lg font-semibold mb-2 uppercase">{categoryKey}</h3>
+                  {/* Check if the value is an array before mapping */}
+                  {Array.isArray(grades.category[categoryKey]) ? (
+                    grades.category[categoryKey].map((grade, gradeIndex) => (
+                      <li
+                        key={gradeIndex}
+                        className={`${visibleGradeIndexes.includes(gradeIndex) ? 'fade-in' : 'hidden'
+                          } transition-opacity duration-500 ease-in`}
+                        style={{ animationDelay: `${gradeIndex * 0.2}s` }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <span>{grade.subject}</span>
+                          <div className="flex items-center space-x-2">
+                            <span>{grade.grade}</span>
+                            <div className="h-2 w-32 bg-gray-800 rounded-full">
+                              <div
+                                className="h-2 progress-filling rounded-full"
+                                style={{ width: gradeToProgressBarWidth(grade.grade) }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    ))
+                  ) : (
+                    // Handle cases where the value is not an array (e.g., Average)
+                    <li>
                       <div className="flex items-center justify-between">
-                        <span>{skill.name}</span>
+                        <span>{categoryKey}</span>
                         <div className="flex items-center space-x-2">
-                          <span>{skill.level}%</span>
+                          <span>{grades.category[categoryKey].grade}</span>
                           <div className="h-2 w-32 bg-gray-800 rounded-full">
                             <div
-                              className="h-2 bg-blue-500   rounded-full"
-                              style={{ width: `${skill.level}%` }}
+                              className="h-2 progress-filling rounded-full"
+                              style={{ width: gradeToProgressBarWidth(grades.category[categoryKey].grade) }}
                             ></div>
                           </div>
                         </div>
                       </div>
                     </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div id='grades-section' className="bright-color p-8 rounded shadow-md w-96">
-          <h2 className="text-2xl font-bold mb-2 fade-in-color">My Grades</h2>
-          <ul className="space-y-2">
-            <h3 className="text-lg font-semibold mb-2">BWD Bern</h3>
-            {grades.map((grade, gradeIndex) => (
-              <li
-                key={gradeIndex}
-                className={`${visibleGradeIndexes.includes(gradeIndex) ? 'fade-in' : 'hidden'
-                  } transition-opacity duration-500 ease-in`}
-                style={{ animationDelay: `${gradeIndex * 0.2}s` }}
-              >
-                <div className="flex items-center justify-between">
-                  <span>{grade.subject}</span>
-                  <div className="flex items-center space-x-2">
-                    <span>{grade.grade}</span>
-                    <div className="h-2 w-32 bg-gray-800 rounded-full">
-                      <div
-                        className="h-2 progress-filling rounded-full"
-                        style={{ width: gradeToProgressBarWidth(grade.grade) }}
-                      ></div>
-                    </div>
-                  </div>
+                  )}
                 </div>
-              </li>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

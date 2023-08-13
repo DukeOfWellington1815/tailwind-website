@@ -1,27 +1,55 @@
-[
-    {
-      "subject": "English",
-      "grade": 5
-    },
-    {
-      "subject": "Mathematics",
-      "grade": 4.8
-    },
-    {
-      "subject": "Science",
-      "grade": 4
-    },
-    {
-      "subject": "History",
-      "grade": 3
-    },
-    {
-      "subject": "Geography",
-      "grade": 4.3
-    },
-    {
-      "subject": "Physical Education",
-      "grade": 6
+{
+  "category": {
+    "Core Area": [
+      {
+        "subject": "German",
+        "grade": 5.0
+      },
+      {
+        "subject": "French",
+        "grade": 5.0
+      },
+      {
+        "subject": "English",
+        "grade": 5.5
+      },
+      {
+        "subject": "Mathematics",
+        "grade": 5.0
+      },
+      {
+        "subject": "Computer Science",
+        "grade": 5.5
+      }
+    ],
+    "Key Area": [
+      {
+        "subject": "Finance and Accounting",
+        "grade": 5.5
+      },
+      {
+        "subject": "Economics and Law",
+        "grade": 5.5
+      }
+    ],
+    "Additional Area": [
+      {
+        "subject": "History and Politics",
+        "grade": 6.0
+      },
+      {
+        "subject": "Technology and Environment",
+        "grade": 5.5
+      }
+    ],
+    "Interdisciplinary Work": [
+      {
+        "subject": "Interdisciplinary Work",
+        "grade": 5.5
+      }
+    ],
+    "Average": {
+      "grade": 5.4
     }
-  ]
-  
+  }
+}

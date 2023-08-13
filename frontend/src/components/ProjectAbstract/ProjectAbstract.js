@@ -136,7 +136,7 @@ export default function ProjectAbstract() {
           style={{ animationDelay: `${index * 0.2}s` }}
         >
           <div className={`text-3xl md:text-7xl font-bold mt-8 md:mt-16 mb-2 md:mb-4 bright-color uppercase mx-4 md:mx-32 content ${isVisible ? 'visible' : ''}`}>
-            <h2>{abstract.title}– <br className="md:hidden" />{abstract.slogan}</h2>
+            <h2>{abstract.title}– <br />{abstract.slogan}</h2>
             <hr />
           </div>
 
@@ -157,7 +157,7 @@ export default function ProjectAbstract() {
               <div className="md:flex-1/3 text-base md:text-xl max-w-md">
                 <div className="flex flex-col">
                   <div className="w-full">
-                    <table className="table bright-color text-2xl">
+                    <table className="table bright-color text-2xl uppercase">
                       <tbody>
                         <tr className="flex">
                           <td className="pr-2">Year:</td>
@@ -169,7 +169,7 @@ export default function ProjectAbstract() {
                         </tr>
                         <tr className="flex">
                           <td className="pr-2">Role:</td>
-                          <td className="secondary-color">{abstract.own_role}</td>
+                          <td className="text-blue-500">{abstract.own_role}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -183,7 +183,7 @@ export default function ProjectAbstract() {
                 <a
                   href={pdfForProject}
                   target="new"
-                  className={`secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                  className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
                 >
                   Read More
                 </a>

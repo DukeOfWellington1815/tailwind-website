@@ -167,11 +167,11 @@ export default function Header() {
                 </div>
               </Link>
             ))}
-            <div className="flex justify-center items-end fixed bottom-0 left-0 right-0 space-x-4">
-              <a href="https://youtube.com" target="new" className="large-icon bright-color">
+            <div className="flex justify-center items-end fixed bottom-10 left-0 right-0 space-x-4">
+              <a href="https://github.com/DukeOfWellington1815" target="new" className="large-icon bright-color">
                 <AiFillGithub />
               </a>
-              <a href="https://youtube.com" target="new" className="large-icon bright-color">
+              <a href="https://in.com/in/lorenzo-florez-fritschi/" target="new" className="large-icon bright-color">
                 <AiFillLinkedin />
               </a>
             </div>
