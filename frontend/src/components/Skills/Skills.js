@@ -32,7 +32,7 @@ export default function SkillsPage() {
         const gradesTop = gradesSection.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         const currentIndex = Math.min(
-          Math.floor((windowHeight * 0.75 - gradesTop) / 100),
+          Math.floor((windowHeight * 1.2 - gradesTop) / 100),
           grades.length - 1
         );
 

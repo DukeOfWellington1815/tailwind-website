@@ -31,8 +31,6 @@ export default function HomePage() {
         {showArrow && <div className={`bright-color text-4xl mt-32 animate-bounce`}>&#8595;</div>}
       </div>
 
-      {/* Downwards arrow */}
-
       <div className='my-5 bright-color'>
         <AboutMe />
       </div>
@@ -49,10 +47,6 @@ export default function HomePage() {
 
       <div className='my-5'>
         <Skills />
-      </div>
-
-      <div className='my-5'>
-        <AareBern />
       </div>
     </div>
   );
