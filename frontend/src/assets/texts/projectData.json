@@ -10,13 +10,16 @@
     "collaborators": [
       { "role": "Frontend Dev", "people": [
         { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
-        { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
+        { "name": "T. Dürr", "website_url": "https://tcraft.link" }
+      ]},
+      { "role": "Deputy Team Lead", "people": [
+        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
       ]},
       { "role": "Planning", "people": [
         { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
       ]},
       { "role": "Team Lead", "people": [
-        { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
+        { "name": "T. Dürr", "website_url": "https://tcraft.link" }
       ]},
       { "role": "Backend Dev", "people": [
         { "name": "O. Lochner", "website_url": "https://fatmonkee.com" }
