@@ -1,4 +1,4 @@
-const URL = 'http://localhost:5000'; // backend URL
+const URL = 'http://localhost:8000'; // backend URL
 
 export async function login({ username, password }) {
   const response = await fetch(`${URL}/api/login`, {
