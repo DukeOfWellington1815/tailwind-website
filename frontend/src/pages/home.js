@@ -22,7 +22,7 @@ export default function HomePage() {
       const timeout = setTimeout(() => {
         setTypedMessage(typedMessage + welcomeText[currentIndex]);
         setCurrentIndex(currentIndex + 1);
-      }, 75); // typing speed
+      }, 60); // typing speed
       return () => clearTimeout(timeout);
     } else {
       setShowArrow(true);
