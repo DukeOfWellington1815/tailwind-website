@@ -142,7 +142,7 @@ export default function ProjectAbstract() {
 
           <Slider {...slickSettings}>
             {imagesForProject.map((image, imgIndex) => (
-              <div key={imgIndex} className="relative image-container">
+              <div key={imgIndex} className="!flex justify-center items-center relative">
                 <img
                   src={image}
                   alt={abstract.title}
