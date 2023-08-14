@@ -58,7 +58,7 @@ export default function ProjectAbstract() {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "15%",
+    centerPadding: "25%",
     nextArrow: null,
     prevArrow: null,
     autoplay: true,
