@@ -32,7 +32,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="mx-4 flex flex-col md:flex-row">
       {/* About Me section */}
       <div
         id="about-me-section"

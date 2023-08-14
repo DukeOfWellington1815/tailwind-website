@@ -154,7 +154,7 @@ export default function ProjectAbstract() {
 
           <div className={`flex flex-col items-center mx-4 md:mx-64 mt-4 md:mt-10 content ${isVisible ? 'visible' : ''}`}>
             <div className="flex flex-col md:flex-row">
-              <div className="md:flex-1/3 text-base md:text-xl max-w-md">
+              <div className="md:flex-1/3 text-base md:text-xl md:mb-0 mb-12 max-w-md">
                 <div className="flex flex-col">
                   <div className="w-full">
                     <table className="table bright-color text-2xl uppercase">
@@ -177,7 +177,7 @@ export default function ProjectAbstract() {
                 </div>
               </div>
               <div className="md:flex-2/3 max-w-full md:max-w-4xl md:ml-16">
-                <p className={`bright-color text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
+                <p className={`bright-color text-xl md:text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
                 <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
               {pdfForProject && (
                 <a
