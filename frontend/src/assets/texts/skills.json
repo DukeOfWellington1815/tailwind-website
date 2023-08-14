@@ -26,8 +26,7 @@
     {
       "category": "Version Control",
       "list": [
-        { "name": "Git", "level": 75 },
-        { "name": "GitHub", "level": 90 }
+        { "name": "Git", "level": 85 }
       ]
     },
     {
