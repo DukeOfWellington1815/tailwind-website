@@ -118,8 +118,7 @@ export default function ProjectAbstract() {
   };
 
   const projectGithub = {
-    "BreadCrumb": "https://github.com/TD99/badibuddy",    
-    "BadiBuddy": "https://github.com/TD99/breadcrumb",
+    "BadiBuddy": "https://github.com/TD99/badibuddy",
   };
 
   return (
@@ -196,12 +195,12 @@ export default function ProjectAbstract() {
                   </div>
                   <div className="md:flex-2/3 max-w-full md:max-w-4xl md:ml-16">
                     <p className={`bright-color text-xl md:text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
-                    <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
+                    <div className={`flex items-center justify-start md:justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
                     {githubForProject && (
                         <a
                           href={githubForProject}
                           target="new"
-                          className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                          className={`uppercase secondary-color font-semibold text-2xl  py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
                         >
                           Github
                         </a>
@@ -210,7 +209,7 @@ export default function ProjectAbstract() {
                         <a
                           href={pdfForProject}
                           target="new"
-                          className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                          className={`uppercase secondary-color font-semibold text-2xl  py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
                         >
                           Read More
                         </a>
