@@ -203,7 +203,7 @@ export default function ProjectAbstract() {
                           target="new"
                           className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
                         >
-                          Read More
+                          Github
                         </a>
                       )}
                       {pdfForProject && (
