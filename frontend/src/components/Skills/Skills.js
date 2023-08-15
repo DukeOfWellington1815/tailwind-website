@@ -71,7 +71,7 @@ export default function SkillsPage() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="md:text-5xl text-xl font-bold bright-color mb-4 uppercase">Academic Progress and Proficiency</h2>
+      <h2 className="md:text-5xl text-xl font-bold bright-color mb-4 uppercase text-center">Academic Progress and Proficiency</h2>
       <div className="flex items-center justify-center">
 
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-64">
