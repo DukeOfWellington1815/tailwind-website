@@ -1,7 +1,7 @@
-const URL = 'http://localhost:8000'; // backend URL
+const URL = 'https://fatmonkee.com/api/index.php'; // backend URL
 
 export async function login({ username, password }) {
-  const response = await fetch(`${URL}/api/login`, {
+  const response = await fetch(`${URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
