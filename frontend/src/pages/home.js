@@ -34,7 +34,7 @@ export default function HomePage() {
       <div className='welcome-section text-4xl md:text-7xl font-bold mt-5 bright-color max-w-7xl'>
         {typedMessage}
         {showArrow && (
-          <a href="#about-me-section" className={`bright-color text-6xl mt-10 md:mt-32 animate-bounce`}>&#8595;</a>
+          <a href="#about-me-section" className={`secondary-color text-6xl mt-10 md:mt-32 animate-bounce`}>&#8595;</a>
         )}
       </div>
 
