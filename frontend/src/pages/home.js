@@ -42,11 +42,11 @@ export default function HomePage() {
         <AboutMe />
       </div>
 
-      <div className='pt-16'>
+      <div id="project-abstracts-section" className='pt-16'>
         <ProjectAbstract />
       </div>
 
-      <div className='pt-16'>
+      <div id="skills-section" className='pt-16'>
         <Skills />
       </div>
     </div>
