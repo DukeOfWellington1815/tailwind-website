@@ -29,7 +29,7 @@ export default function useSession() {
     setSession(data);
     Cookies.set(SESSION_COOKIE_KEY, JSON.stringify(data), { expires: 2 });
     window.location.reload(); // Refresh the page after updating the session
-    window.location.href = "/dossier"; // Redirect to the home page
+    window.location.href = "/"; // Redirect to the home page
   };
 
   const login = (data) => {
