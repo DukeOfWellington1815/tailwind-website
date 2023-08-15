@@ -8,26 +8,14 @@
     "own_role": "Developer, Planning",
     "year": 2023,
     "collaborators": [
-      { "role": "Frontend Dev", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
-        { "name": "T. Dürr", "website_url": "https://tcraft.link" }
-      ]},
-      { "role": "Deputy Team Lead", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
-      ]},
-      { "role": "Planning", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
-      ]},
-      { "role": "Team Lead", "people": [
-        { "name": "T. Dürr", "website_url": "https://tcraft.link" }
-      ]},
-      { "role": "Backend Dev", "people": [
-        { "name": "O. Lochner", "website_url": "https://fatmonkee.com" }
-      ]},
-      { "role": "Design", "people": [
-        { "name": "G. Greco", "website_url": "https://fatmonkee.com" }
-      ]}
-    ]
+      { "role": "Frontend Dev", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.link" } ] },
+      { "role": "Deputy Team Lead", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] },
+      { "role": "Planning", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] },
+      { "role": "Team Lead", "people": [ { "name": "T. Dürr", "website_url": "https://tcraft.link" } ] },
+      { "role": "Backend Dev", "people": [ { "name": "O. Lochner", "website_url": "https://fatmonkee.com" } ] },
+      { "role": "Design", "people": [ { "name": "G. Greco", "website_url": "https://fatmonkee.com" } ] }
+    ],
+    "technologies": [ "Ionic framework", "Adobe XD", "MSSQL", "Vite", "C#" ]
   },
   {
     "id": 2,
@@ -38,15 +26,10 @@
     "own_role": "Developer, Design",
     "year": 2023,
     "collaborators": [
-      { "role": "Developer", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
-        { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
-      ]},
-      { "role": "Design", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
-        { "name": "T. Dürr", "website_url": "https://tcraft.ch" }
-      ]}
-    ]
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.ch" } ] },
+      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.ch" } ] }
+    ],
+    "technologies": [ "Android Studio", "Java"]
   },
   {
     "id": 3,
@@ -57,10 +40,9 @@
     "own_role": "Developer",
     "year": 2022,
     "collaborators": [
-      { "role": "Developer", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
-      ]}
-    ]
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] }
+    ],
+    "technologies": ["Bootstrap CSS", "JavaScript", "HTML", "CSS"]
   },
   {
     "id": 4,
@@ -71,10 +53,9 @@
     "own_role": "Design",
     "year": 2022,
     "collaborators": [
-      { "role": "Design", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }
-      ]}
-    ]
+      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] }
+    ],
+    "technologies": [".NET MAUI", "Adobe XD"]
   },
   {
     "id": 5,
@@ -84,21 +65,12 @@
     "type": "Scrum Project",
     "own_role": "Developer, Product Owner",
     "year": 2023,
-    "collaborators": [      
-      { "role": "Developer", "people": [
-        { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" },
-        { "name": "D. Staudenmann" },
-        { "name": "D. Ribeiro", "website_url": "http://youtube.com/" }
-      ]},
-      { "role": "Product Owner", "people": [
-        { "name": "L. Flórez Fritschi"}
-      ]},
-      { "role": "Scrum Master", "people": [
-        { "name": "D. Staudenmann"}
-      ]},
-      { "role": "Design", "people": [
-        { "name": "D. Ribeiro", "website_url": "http://youtube.com/" }
-      ]}
-    ]
+    "collaborators": [
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "D. Staudenmann" }, { "name": "D. Ribeiro", "website_url": "http://youtube.com/" } ] },
+      { "role": "Product Owner", "people": [ { "name": "L. Flórez Fritschi"} ] },
+      { "role": "Scrum Master", "people": [ { "name": "D. Staudenmann"} ] },
+      { "role": "Design", "people": [ { "name": "D. Ribeiro", "website_url": "http://youtube.com/" } ] }
+    ],
+    "technologies": ["Azure DevOps", "Python", "Git"]
   }
 ]

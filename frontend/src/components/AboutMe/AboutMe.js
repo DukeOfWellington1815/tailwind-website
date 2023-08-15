@@ -32,7 +32,7 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="mx-4 flex flex-col md:flex-row">
       {/* About Me section */}
       <div
         id="about-me-section"
@@ -53,7 +53,7 @@ export default function AboutMe() {
       </div>
 
       {/* Mini CV section */}
-      <div className="md:w-1/3 text-base md:text-xl max-w-xs mt-4 md:mt-0">
+      <div className="w-full md:w-1/3 text-base md:text-xl max-w-md md:max-w-xs mt-4 md:mt-0">
         <h3 className="mb-2 md:mb-4 primary-color">education</h3>
         <div>
           {minicv.education.map((experience, index) => (
@@ -90,7 +90,7 @@ export default function AboutMe() {
         <div className={`${visibleIndexes.includes(0) ? 'fade-in' : ''
           } transition-opacity duration-500 ease-in ${visibleIndexes.includes(0) ? 'visible' : ''}`}>
           <p>visual inspiration - <a href={minicv.credits.url} target='_blank' rel='noopener noreferrer'>{minicv.credits.visualInspiration}</a></p>
-          <div className='mt-24 '>
+          <div className='mt-24 flex justify-center lg:justify-start'>
             <img src={logo} alt='logo' className='rounded-full max-w-[75%]' />
           </div>
         </div>

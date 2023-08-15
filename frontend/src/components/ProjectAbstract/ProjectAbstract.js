@@ -48,7 +48,7 @@ export default function ProjectAbstract() {
   const [visibleIndexes, setVisibleIndexes] = useState([]);
   const [loading, setLoading] = useState(false); // Add this line
   const [error, setError] = useState(""); // Add this line
-  
+
   const placeholderImages = [placeholder, placeholder, placeholder, placeholder, placeholder];
 
   const slickSettings = {
@@ -103,7 +103,7 @@ export default function ProjectAbstract() {
   }, [abstracts]);
 
   const projectImages = {
-    "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],    
+    "BreadCrumb": [imagebc1, imagebc2, imagebc3, imagebc4],
     "BadiBuddy": [imagebb1, imagebb2, imagebb3, imagebb4, imagebb5, imagebb6],
     "PRESIDENTS OF THE WORLD (2022)": [imagepotw1, imagepotw2, imagepotw3, imagepotw4, imagepotw5, imagepotw6],
     "Saab Classics": [imagesc1, imagesc2, imagesc3, imagesc4, imagesc5],
@@ -111,8 +111,8 @@ export default function ProjectAbstract() {
   };
 
   const projectPdf = {
-    "BreadCrumb": pdfbc,    
-    "PRESIDENTS OF THE WORLD (2022)": pdfpotw, 
+    "BreadCrumb": pdfbc,
+    "PRESIDENTS OF THE WORLD (2022)": pdfpotw,
     "Saab Classics": pdfsc,
     "RPS (rock paper scissors)": pdfrps,
   };
@@ -135,108 +135,119 @@ export default function ProjectAbstract() {
       const pdfForProject = projectPdf[abstract.title];
       const githubForProject = projectGithub[abstract.title];
 
-      return (
-        <div
-          key={index}
-          className={`carousel-item my-12 md:my-64 ${isVisible ? 'fade-in' : ''}`}
-          style={{ animationDelay: `${index * 0.2}s` }}
-        >
-          <div className={`text-3xl md:text-7xl font-bold mt-8 md:mt-16 mb-2 md:mb-4 bright-color uppercase mx-4 md:mx-32 content ${isVisible ? 'visible' : ''}`}>
-            <h2>{abstract.title}– <br />{abstract.slogan}</h2>
-            <hr />
-          </div>
-
-          <Slider {...slickSettings}>
-            {imagesForProject.map((image, imgIndex) => (
-              <div key={imgIndex} className="!flex justify-center items-center relative">
-                <img
-                  src={image}
-                  alt={abstract.title}
-                  className={`h-64 md:h-screen w-full object-contain rounded-md mx-auto content ${isVisible ? ' visible' : ''}`}
-                />
+          return (
+            <div
+              key={index}
+              className={`carousel-item my-12 md:my-64 ${isVisible ? 'fade-in' : ''}`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className={`text-3xl md:text-7xl font-bold mt-8 md:mt-16 mb-2 md:mb-4 bright-color uppercase mx-4 md:mx-32 content ${isVisible ? 'visible' : ''}`}>
+                <h2>{abstract.title}– <br />{abstract.slogan}</h2>
+                <hr />
               </div>
-            ))}
-          </Slider>
 
-          <div className={`flex flex-col items-center mx-4 md:mx-64 mt-4 md:mt-10 content ${isVisible ? 'visible' : ''}`}>
-            <div className="flex flex-col md:flex-row">
-              <div className="md:flex-1/3 text-base md:text-xl max-w-md">
-                <div className="flex flex-col">
-                  <div className="w-full">
-                    <table className="table bright-color text-2xl uppercase">
-                      <tbody>
-                        <tr className="flex">
-                          <td className="pr-2">Year:</td>
-                          <td className="tetriary-color">{abstract.year}</td>
-                        </tr>
-                        <tr className="flex">
-                          <td className="pr-2">Type:</td>
-                          <td className="primary-color">{abstract.type}</td>
-                        </tr>
-                        <tr className="flex">
-                          <td className="pr-2">Role:</td>
-                          <td className="text-blue-500">{abstract.own_role}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <Slider {...slickSettings}>
+                {imagesForProject.map((image, imgIndex) => (
+                  <div key={imgIndex} className="!flex justify-center items-center relative">
+                    <img
+                      src={image}
+                      alt={abstract.title}
+                      className={`h-64 md:h-screen w-full object-contain rounded-md mx-auto content ${isVisible ? ' visible' : ''}`}
+                    />
+                  </div>
+                ))}
+              </Slider>
+
+              <div className={`flex flex-col items-center mx-4 md:mx-64 mt-4 md:mt-10 content ${isVisible ? 'visible' : ''}`}>
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:flex-1/3 text-base md:text-xl md:mb-0 mb-12 max-w-md">
+                    <div className="flex flex-col">
+                      <div className="w-full">
+                        <table className="table bright-color text-2xl uppercase">
+                          <tbody>
+                            <tr className="flex">
+                              <td className="pr-2">Year:</td>
+                              <td className="tetriary-color">{abstract.year}</td>
+                            </tr>
+                            <tr className="flex">
+                              <td className="pr-2">Type:</td>
+                              <td className="primary-color">{abstract.type}</td>
+                            </tr>
+                            <tr className="flex">
+                              <td className="pr-2">Role:</td>
+                              <td className="text-blue-500">{abstract.own_role}</td>
+                            </tr>
+                            <tr className="flex mt-12">
+                              <td className="pr-2">Technologies:</td>
+                            </tr>
+                            <tr className="flex">
+                              <td>
+                                <ul className="text-gray-500 list-disc list-inside">
+                                  {abstract.technologies.map((technology, index) => (
+                                    <li key={index} className='list-none'>{technology}</li>
+                                  ))}
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:flex-2/3 max-w-full md:max-w-4xl md:ml-16">
+                    <p className={`bright-color text-xl md:text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
+                    <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
+                    {githubForProject && (
+                        <a
+                          href={githubForProject}
+                          target="new"
+                          className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                        >
+                          Read More
+                        </a>
+                      )}
+                      {pdfForProject && (
+                        <a
+                          href={pdfForProject}
+                          target="new"
+                          className={`uppercase secondary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
+                        >
+                          Read More
+                        </a>
+                      )}
+                    </div>
+                    <div className={`mt-10 ${isVisible ? 'fade-in visible' : ''}`}>
+                      <p className={`bright-color text-md ${isVisible ? 'fade-in visible' : ''}`}>
+                        {abstract.collaborators &&
+                          abstract.collaborators.map((roleWithPeople, collaboratorIndex) => (
+                            <span key={collaboratorIndex}>
+                              <span className="text-gray-500 uppercase font-semibold">{roleWithPeople.role}:</span>{" "}
+                              {roleWithPeople.people.map((collaborator, personIndex) => (
+                                <React.Fragment key={personIndex}>
+                                  <a
+                                    href={collaborator.website_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="uppercase"
+                                  >
+                                    {collaborator.name}
+                                  </a>
+                                  {personIndex !== roleWithPeople.people.length - 1 && ", "}
+                                </React.Fragment>
+                              ))}
+                              {collaboratorIndex !== abstract.collaborators.length - 1 && " "}
+                            </span>
+                          ))}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className="md:flex-2/3 max-w-full md:max-w-4xl md:ml-16">
-                <p className={`bright-color text-4xl ${isVisible ? 'fade-in visible' : ''}`}>{abstract.body}</p>
-                <div className={`flex items-center justify-end mt-4 ${isVisible ? 'fade-in visible' : ''}`}>
-                {githubForProject && (
-                <a
-                  href={githubForProject}
-                  target="new"
-                  className={`uppercase primary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
-                >
-                  Github
-                </a>
-              )}
-              {pdfForProject && (
-                <a
-                  href={pdfForProject}
-                  target="new"
-                  className={`uppercase primary-color font-semibold text-2xl px-4 py-2 rounded-md hover:opacity-80 ${isVisible ? 'fade-in visible' : ''}`}
-                >
-                  Read More
-                </a>
-              )}
             </div>
-
-                <div className={`mt-10 ${isVisible ? 'fade-in visible' : ''}`}>
-                  <p className={`bright-color text-md ${isVisible ? 'fade-in visible' : ''}`}>
-                    {abstract.collaborators &&
-                      abstract.collaborators.map((roleWithPeople, collaboratorIndex) => (
-                        <span key={collaboratorIndex}>
-                          <span className="text-gray-500 uppercase font-semibold">{roleWithPeople.role}:</span>{" "}
-                          {roleWithPeople.people.map((collaborator, personIndex) => (
-                            <React.Fragment key={personIndex}>
-                              <a
-                                href={collaborator.website_url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="uppercase"
-                              >
-                                {collaborator.name}
-                              </a>
-                              {personIndex !== roleWithPeople.people.length - 1 && ", "}
-                            </React.Fragment>
-                          ))}
-                          {collaboratorIndex !== abstract.collaborators.length - 1 && " "}
-                        </span>
-                      ))}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    })
-  )}
-</div>
+          );
+        })
+      )}
+    </div>
 
   );
 
