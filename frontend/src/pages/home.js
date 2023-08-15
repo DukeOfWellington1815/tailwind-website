@@ -33,18 +33,20 @@ export default function HomePage() {
     <div className='flex flex-col items-center overflow-hidden'>
       <div className='welcome-section text-4xl md:text-7xl font-bold mt-5 bright-color max-w-7xl'>
         {typedMessage}
-        {showArrow && <div className={`bright-color text-6xl mt-10 md:mt-32 animate-bounce`}>&#8595;</div>}
+        {showArrow && (
+          <a href="#about-me-section" className={`bright-color text-6xl mt-10 md:mt-32 animate-bounce`}>&#8595;</a>
+        )}
       </div>
 
-      <div className='my-5 bright-color'>
+      <div id="about-me-section" className='pt-16 bright-color'>
         <AboutMe />
       </div>
 
-      <div className='my-5'>
+      <div className='pt-16'>
         <ProjectAbstract />
       </div>
 
-      <div className='my-5'>
+      <div className='pt-16'>
         <Skills />
       </div>
     </div>
