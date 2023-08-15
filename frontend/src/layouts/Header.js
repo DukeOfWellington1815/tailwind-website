@@ -90,7 +90,13 @@ export default function Header() {
       <div className="w-full h-full flex justify-center items-center relative">
 
         <Link to="/">
-          <img src={logo} ref={logoRef} className="App-logo monkeylogo absolute left-0 top-0" alt="logo" />
+          <img
+            src={logo}
+            ref={logoRef}
+            className="App-logo monkeylogo absolute left-0 top-0"
+            alt="logo"
+            onClick={() => window.scrollTo(0, 0)} // Scroll to top when clicked
+          />
         </Link>
 
         <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)} className="bright-color absolute right-0 top-1/2 -translate-y-1/2 md:hidden">
