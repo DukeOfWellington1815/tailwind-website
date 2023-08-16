@@ -1,4 +1,5 @@
 <?php
+
 // Allow from any origin
 if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
@@ -45,7 +46,7 @@ function verifyToken($token) {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['REQUEST_URI'] === '/api/login') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_SERVER['CONTENT_TYPE'] !== 'application/json') {
         http_response_code(400);
         echo json_encode(array('error' => 'Invalid Content-Type header'));
