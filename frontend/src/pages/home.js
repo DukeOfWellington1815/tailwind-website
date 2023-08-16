@@ -11,6 +11,8 @@ export default function HomePage() {
   const [typedMessage, setTypedMessage] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showArrow, setShowArrow] = useState(false);
+  
+  document.body.classList.remove('no-scroll');
 
   useEffect(() => {
     document.title = 'FatMonkee - Lorenzo';
