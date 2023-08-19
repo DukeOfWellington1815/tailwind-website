@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import CV_EN from "../assets/docs/CV_EN.pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // Import the required CSS
+import References from "../components/References/References";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -51,6 +52,7 @@ function Dossier() {
 
   return (
     <div className="flex flex-col items-center">
+      <References/>
       <div className="text-center mt-4">
         <button
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2"
