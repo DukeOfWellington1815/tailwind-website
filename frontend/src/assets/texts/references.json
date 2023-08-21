@@ -5,7 +5,7 @@
             "title": "Business and Law  Teacher",
             "institution": "BWD Bern",
             "email": "stefan.hugi@bwdbern.ch",
-            "phone": "(123) 456-7890"
+            "phone": "078 765 70 40"
         },
         {
             "name": "Sarah Angst",
@@ -26,21 +26,14 @@
             "title": "Computer Science  Teacher",
             "institution": "gibb",
             "email": "reto.glarner@gibb.ch",
-            "phone": "031 335 94 06"
-        },
-        {
-            "name": "Kurt Järmann",
-            "title": "Computer Science  Teacher",
-            "institution": "gibb",
-            "email": "kurt.jaermann@gibb.ch",
-            "phone": "(123) 456-7890"
+            "phone": "079 414 74 18"
         },
         {
             "name": "Karin Abegglen",
             "title": "Computer Science  Teacher",
             "institution": "gibb",
             "email": "karin.abegglen@gibb.ch",
-            "phone": "(123) 456-7890"
+            "phone": "+41 76 439 53 65"
         }
     ]
 }
