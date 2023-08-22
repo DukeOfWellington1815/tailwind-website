@@ -12,7 +12,7 @@ import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner.js";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const pdfFiles = [
-  { file: CV_EN, name: "Curriculum vitae" },
+  { file: CV_EN, name: "Curriculum Vitae" },
   { file: DELE, name: "Spanish Diploma" },
   { file: BWD, name: "BWD Certificate" },
   { file: GIBB, name: "gibb Certificate" },
@@ -67,7 +67,7 @@ function Dossier() {
       <div className="flex md:space-x-2 space-x-0 md:space-y-0 space-y-6 pt-8 md:flex-row flex-col items-center">
         <div>
           <select
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="hover:opacity-80 bg-black md:text-right text-left text-blue-500 font-bold py-2 px-4 rounded hover:cursor-pointer"
             value={selectedPdf.name}
             onChange={(e) => {
               const selectedName = e.target.value;
@@ -84,19 +84,19 @@ function Dossier() {
         </div>
         <div className="space-x-2">
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="hover:opacity-80  text-blue-500 font-bold py-2 px-4 rounded"
             onClick={handleZoomIn}
           >
             Zoom In
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="hover:opacity-80  text-blue-500 font-bold py-2 px-4 rounded"
             onClick={handleZoomOut}
           >
             Zoom Out
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="hover:opacity-80  text-blue-500 font-bold py-2 px-4 rounded"
             onClick={handleDownload}
           >
             Download PDF
