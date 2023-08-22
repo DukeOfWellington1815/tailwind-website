@@ -6,16 +6,17 @@ import CV_EN from "../assets/docs/CV_EN.pdf";
 import DELE from "../assets/docs/DELE.pdf";
 import BWD from "../assets/docs/bwd_2022-2023.pdf";
 import GIBB from "../assets/docs/gibb_2022-2023.pdf";
-import ABACUS1 from "../assets/docs/abacus_debi.pdf";
+import abacus_debi from "../assets/docs/abacus_debi.pdf";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner.js";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const pdfFiles = [
-  { file: CV_EN, name: "CV" },
+  { file: CV_EN, name: "Curriculum vitae" },
   { file: DELE, name: "Spanish Diploma" },
   { file: BWD, name: "BWD Certificate" },
   { file: GIBB, name: "gibb Certificate" },
-  { file: ABACUS1, name: "Abacus DEBI Diploma" }
+  { file: abacus_debi, name: "Abacus DEBI Diploma" }
 ];
 
 function Dossier() {
@@ -63,42 +64,47 @@ function Dossier() {
 
   return (
     <div className="flex flex-col items-center">
-      <References/>
-      <div className="mb-4">
+      <div className="flex md:space-x-2 space-x-0 md:space-y-0 space-y-6 pt-8 md:flex-row flex-col items-center">
+        <div>
+          <select
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            value={selectedPdf.name}
+            onChange={(e) => {
+              const selectedName = e.target.value;
+              const selectedFile = pdfFiles.find((pdfFile) => pdfFile.name === selectedName);
+              setSelectedPdf(selectedFile);
+            }}
+          >
+            {pdfFiles.map((pdfFile, index) => (
+              <option key={index} value={pdfFile.name}>
+                {pdfFile.name}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className="space-x-2">
-          {pdfFiles.map((pdfFile, index) => (
-            <button
-              key={index}
-              className={`px-4 py-2 rounded ${selectedPdf === pdfFile ? 'bg-primary-color ' : 'bg-gray-200 text-gray-600'}`}
-              onClick={() => setSelectedPdf(pdfFile)}
-            >
-              {pdfFile.name}
-            </button>
-          ))}
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={handleZoomIn}
+          >
+            Zoom In
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={handleZoomOut}
+          >
+            Zoom Out
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={handleDownload}
+          >
+            Download PDF
+          </button>
         </div>
       </div>
-      <div className="flex space-x-2 mt-4">
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          onClick={handleZoomIn}
-        >
-          Zoom In
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          onClick={handleZoomOut}
-        >
-          Zoom Out
-        </button>
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-          onClick={handleDownload}
-        >
-          Download PDF
-        </button>
-      </div>
       <div className="p-8 w-full md:w-3/4 lg:w-1/2 xl:w-1/3 flex flex-col items-center" ref={containerRef}>
-        <Document file={selectedPdf.file} onLoadSuccess={onDocumentLoadSuccess} loading="">
+        <Document file={selectedPdf.file} onLoadSuccess={onDocumentLoadSuccess} loading={<LoadingSpinner/>}>
           {Array.from(new Array(numPages), (el, index) => (
             <Page
               className="shadow-lg mb-4"
@@ -112,6 +118,7 @@ function Dossier() {
           ))}
         </Document>
       </div>
+      <References />
     </div>
   );
 }
