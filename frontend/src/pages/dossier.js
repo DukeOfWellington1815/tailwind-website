@@ -1,13 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // Import the required CSS
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import References from "../components/References/References";
 import CV_EN from "../assets/docs/CV_EN.pdf";
 import DELE from "../assets/docs/DELE.pdf";
 import BWD from "../assets/docs/bwd_2022-2023.pdf";
 import GIBB from "../assets/docs/gibb_2022-2023.pdf";
 import abacus_debi from "../assets/docs/abacus_debi.pdf";
+import dossier_lorenzo_florezfritschi from "../assets/docs/dossier_lorenzo_florezfritschi.zip";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner.js";
+import JSZip from "jszip";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -28,14 +30,13 @@ function Dossier() {
   const [zoomLevel, setZoomLevel] = useState(1.0);
 
   useEffect(() => {
-    document.title = 'Dossier';
+    document.title = 'Dossier - Lorenzo Flórez Fritschi';
   }, []);
 
   useEffect(() => {
     const width = containerRef.current.offsetWidth;
     setContainerWidth(width * zoomLevel);
 
-    // Scroll to keep the page centered after zoom
     const container = containerRef.current;
     const scrollLeft = (container.scrollWidth - container.offsetWidth) / 2;
     container.scrollLeft = scrollLeft;
@@ -46,6 +47,14 @@ function Dossier() {
     link.href = selectedPdf.file;
     link.target = "_blank";
     link.download = selectedPdf.name;
+    link.click();
+  }
+
+  function handleDownloadAll() {
+    const link = document.createElement("a");
+    link.href = dossier_lorenzo_florezfritschi;
+    link.target = "_blank";
+    link.download = "all_documents.zip";
     link.click();
   }
 
@@ -102,9 +111,17 @@ function Dossier() {
             Download PDF
           </button>
         </div>
+        <div>
+          <button
+            className="hover:opacity-80  text-blue-500 font-bold py-2 px-4 rounded"
+            onClick={handleDownloadAll}
+          >
+            Download All Files
+          </button>
+        </div>
       </div>
       <div className="p-8 w-full md:w-3/4 lg:w-1/2 xl:w-1/3 flex flex-col items-center" ref={containerRef}>
-        <Document file={selectedPdf.file} onLoadSuccess={onDocumentLoadSuccess} loading={<LoadingSpinner/>}>
+        <Document file={selectedPdf.file} onLoadSuccess={onDocumentLoadSuccess} loading={<LoadingSpinner />}>
           {Array.from(new Array(numPages), (el, index) => (
             <Page
               className="shadow-lg mb-4"
