@@ -17,7 +17,7 @@ const Login = () => {
   const { login: sessionLogin, error: sessionError } = useSession();
 
   useEffect(() => {
-    document.title = 'Sign in to your FatMonkee account';
+    document.title = 'Sign in to your account';
   }, []);
 
   const handleLogin = async (e) => {
