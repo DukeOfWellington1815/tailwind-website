@@ -43,7 +43,7 @@ export default function Footer() {
               <br />
               Email: <a href="mailto:lorenzo.florez.fritschi@protonmail.com" className="hover:underline focus:outline-none">lorenzo.florez.fritschi@protonmail.com</a>
               <br />
-              Website: <a href="https://fatmonkee.com" className="hover:underline focus:outline-none">fatmonkee.com</a>
+              Website: <a href="https://lorenzoflorez.com" className="hover:underline focus:outline-none">lorenzoflorez.com</a>
             </p>
             <button onClick={togglePopup}>Close</button>
           </div>
