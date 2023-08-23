@@ -154,8 +154,19 @@ export default function Header() {
 
         {screenWidth < 768 && (
           <div ref={menuRef} className={`fixed mt-16 top-0 bottom-0 right-0 w-screen bg-black shadow-md p-4 space-y-4 transition-all duration-300 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+            <Link
+              to="/"
+              className="font-display max-w-sm text-xl font-bold bright-color leading-tight block text-center"
+              onClick={() => { setIsOpen(false); window.scrollTo(0, 0) } }
+            >
+              <div className="flex items-center">
+                <AiFillHome />
+                <span className="ml-4 bright-color text-4xl link link-underline link-underline-black">
+                  Home
+                </span>
+              </div>
+            </Link>
             {[
-              ['Home', '/', <AiFillHome />],
               ['Dossier', '/dossier', <AiFillFolderOpen />],
               ['Contact', '/contact', <AiFillMail />],
             ].map(([title, url, icon], index) => (
@@ -173,16 +184,18 @@ export default function Header() {
                 </div>
               </Link>
             ))}
+
             <div className="flex justify-center items-end fixed bottom-10 left-0 right-0 space-x-4">
-              <a href="https://github.com/DukeOfWellington1815" target="new" className="large-icon bright-color">
+              <a href="https://github.com/DukeOfWellington1815" target="_blank" rel="noopener noreferrer" className="large-icon bright-color">
                 <AiFillGithub />
               </a>
-              <a href="https://www.linkedin.com/in/lorenzo-florez-fritschi/" target="new" className="large-icon bright-color">
+              <a href="https://www.linkedin.com/in/lorenzo-florez-fritschi/" target="_blank" rel="noopener noreferrer" className="large-icon bright-color">
                 <AiFillLinkedin />
               </a>
             </div>
           </div>
         )}
+
 
         <div className="hidden md:flex space-x-16">
           {[
