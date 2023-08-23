@@ -15,7 +15,7 @@ export default function HomePage() {
   document.body.classList.remove('no-scroll');
 
   useEffect(() => {
-    document.title = 'FatMonkee - Lorenzo';
+    document.title = 'Lorenzo Flórez Fritschi';
   }, []);
 
 
