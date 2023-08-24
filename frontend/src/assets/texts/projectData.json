@@ -8,12 +8,12 @@
     "own_role": "Developer, Planning",
     "year": 2023,
     "collaborators": [
-      { "role": "Frontend Dev", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.link" } ] },
-      { "role": "Deputy Team Lead", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] },
-      { "role": "Planning", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] },
-      { "role": "Team Lead", "people": [ { "name": "T. Dürr", "website_url": "https://tcraft.link" } ] },
-      { "role": "Backend Dev", "people": [ { "name": "O. Lochner", "website_url": "https://fatmonkee.com" } ] },
-      { "role": "Design", "people": [ { "name": "G. Greco", "website_url": "https://fatmonkee.com" } ] }
+      { "role": "Frontend Dev", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" }, { "name": "T. Dürr", "website_url": "https://github.com/TD99" } ] },
+      { "role": "Deputy Team Lead", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" } ] },
+      { "role": "Planning", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" } ] },
+      { "role": "Team Lead", "people": [ { "name": "T. Dürr", "website_url": "https://github.com/TD99" } ] },
+      { "role": "Backend Dev", "people": [ { "name": "O. Lochner", "website_url": "https://github.com/olo135597" } ] },
+      { "role": "Design", "people": [ { "name": "G. Greco", "website_url": "https://github.com/ARK0DA" } ] }
     ],
     "technologies": [ "Ionic framework", "Adobe XD", "MSSQL", "Vite", "C#" ]
   },
@@ -26,8 +26,8 @@
     "own_role": "Developer, Design",
     "year": 2023,
     "collaborators": [
-      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.ch" } ] },
-      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "T. Dürr", "website_url": "https://tcraft.ch" } ] }
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" }, { "name": "T. Dürr", "website_url": "https://github.com/TD99" } ] },
+      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" }, { "name": "T. Dürr", "website_url": "https://github.com/TD99" } ] }
     ],
     "technologies": [ "Android Studio", "Java"]
   },
@@ -40,7 +40,7 @@
     "own_role": "Developer",
     "year": 2022,
     "collaborators": [
-      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] }
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" } ] }
     ],
     "technologies": ["Bootstrap CSS", "JavaScript", "HTML", "CSS"]
   },
@@ -53,7 +53,7 @@
     "own_role": "Design",
     "year": 2022,
     "collaborators": [
-      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" } ] }
+      { "role": "Design", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" } ] }
     ],
     "technologies": [".NET MAUI", "Adobe XD"]
   },
@@ -66,10 +66,10 @@
     "own_role": "Developer, Product Owner",
     "year": 2023,
     "collaborators": [
-      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://fatmonkee.com" }, { "name": "D. Staudenmann" }, { "name": "D. Ribeiro", "website_url": "http://youtube.com/" } ] },
-      { "role": "Product Owner", "people": [ { "name": "L. Flórez Fritschi"} ] },
+      { "role": "Developer", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815" }, { "name": "D. Staudenmann" }, { "name": "D. Ribeiro"} ] },
+      { "role": "Product Owner", "people": [ { "name": "L. Flórez Fritschi", "website_url": "https://github.com/DukeOfWellington1815"} ] },
       { "role": "Scrum Master", "people": [ { "name": "D. Staudenmann"} ] },
-      { "role": "Design", "people": [ { "name": "D. Ribeiro", "website_url": "http://youtube.com/" } ] }
+      { "role": "Design", "people": [ { "name": "D. Ribeiro"} ] }
     ],
     "technologies": ["Azure DevOps", "Python", "Git"]
   }
