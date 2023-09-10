@@ -140,7 +140,7 @@ export default function ProjectAbstract() {
               className={`carousel-item my-12 md:my-64 ${isVisible ? 'fade-in' : ''}`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className={`text-3xl md:text-7xl font-bold mt-8 md:mt-16 mb-2 md:mb-4 bright-color uppercase mx-4 md:mx-32 content ${isVisible ? 'visible' : ''}`}>
+              <div className={`text-3xl md:text-6xl font-bold mt-8 md:mt-16 mb-2 md:mb-4 bright-color uppercase mx-4 md:mx-32 content ${isVisible ? 'visible' : ''}`}>
                 <h2>{abstract.title}– <br />{abstract.slogan}</h2>
                 <hr />
               </div>
