@@ -85,7 +85,7 @@ export default function SkillsPage() {
                     {skillCategory.list.map((skill, skillIndex) => (
                       <li
                         key={skill.name}
-                        className={`${visibleSkillIndexes.includes(skillIndex) ? 'fade-in' : 'hidden'
+                        className={`${visibleSkillIndexes.includes(skillIndex) ? 'fade-in' : 'opacity-0'
                           } transition-opacity duration-500 ease-in`}
                         style={{ animationDelay: `${skillIndex * 0.2}s` }}
                       >
@@ -119,7 +119,7 @@ export default function SkillsPage() {
                     grades.category[categoryKey].map((grade, gradeIndex) => (
                       <li
                         key={gradeIndex}
-                        className={`${visibleGradeIndexes.includes(gradeIndex) ? 'fade-in' : 'hidden'
+                        className={`${visibleGradeIndexes.includes(gradeIndex) ? 'fade-in' : 'opacity-0'
                           } transition-opacity duration-500 ease-in`}
                         style={{ animationDelay: `${gradeIndex * 0.2}s` }}
                       >
