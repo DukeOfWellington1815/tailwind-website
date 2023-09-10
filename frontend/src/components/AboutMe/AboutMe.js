@@ -46,7 +46,7 @@ export default function AboutMe() {
                 } transition-opacity duration-500 ease-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <p className={`text-xl md:text-5xl ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{article}</p>
+              <p className={`text-xl md:text-4xl ${visibleIndexes.includes(index) ? 'visible' : ''}`}>{article}</p>
             </div>
           ))}
         </div>
